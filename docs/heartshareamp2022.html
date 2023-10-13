@@ -4,18 +4,18 @@
 
   <meta charset="utf-8" />
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
-  <title>In-Person HeartShare AMP [2022-09-29] | HeartShare EHR Integration Manual</title>
+  <title>EHR Data Call for demographic and LVEF | HeartShare EHR Integration Manual</title>
   <meta name="description" content="Documentation of EHR data integration specifications" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
-  <meta property="og:title" content="In-Person HeartShare AMP [2022-09-29] | HeartShare EHR Integration Manual" />
+  <meta property="og:title" content="EHR Data Call for demographic and LVEF | HeartShare EHR Integration Manual" />
   <meta property="og:type" content="book" />
   
   <meta property="og:description" content="Documentation of EHR data integration specifications" />
   
 
   <meta name="twitter:card" content="summary" />
-  <meta name="twitter:title" content="In-Person HeartShare AMP [2022-09-29] | HeartShare EHR Integration Manual" />
+  <meta name="twitter:title" content="EHR Data Call for demographic and LVEF | HeartShare EHR Integration Manual" />
   
   <meta name="twitter:description" content="Documentation of EHR data integration specifications" />
   
@@ -23,14 +23,14 @@
 <meta name="author" content="HeartShare Data Portal and EHR Integration Working Group" />
 
 
-<meta name="date" content="2022-12-26" />
+<meta name="date" content="2023-10-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
   <meta name="apple-mobile-web-app-status-bar-style" content="black" />
   
   
-<link rel="prev" href="active-ehr-data-call.html"/>
+<link rel="prev" href="heartshare-retrospective-cohort-details.html"/>
 
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -86,31 +90,33 @@
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="dpehri.html"><a href="dpehri.html#where-will-the-ehr-data-be-analyzed"><i class="fa fa-check"></i><b>1.6</b> Where Will the EHR Data Be Analyzed?</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html"><i class="fa fa-check"></i><b>2</b> Active EHR Data Call</a>
+<li class="chapter" data-level="2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html"><i class="fa fa-check"></i><b>2</b> HeartShare Retrospective Cohort Details</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#general-description-and-notes"><i class="fa fa-check"></i><b>2.1</b> General Description and Notes</a></li>
-<li class="chapter" data-level="2.2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#cohort"><i class="fa fa-check"></i><b>2.2</b> Cohort</a>
+<li class="chapter" data-level="2.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#cohort"><i class="fa fa-check"></i><b>2.1</b> Cohort</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#historical-hf-patients-at-cc"><i class="fa fa-check"></i><b>2.2.1</b> Historical HF Patients at CC</a></li>
-<li class="chapter" data-level="2.2.2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#hf-patients-prospectively-enrolled-in-the-heartshare-study"><i class="fa fa-check"></i><b>2.2.2</b> HF Patients Prospectively Enrolled in the HeartShare Study</a></li>
+<li class="chapter" data-level="2.1.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#historical-hf-patients-at-cc"><i class="fa fa-check"></i><b>2.1.1</b> Historical HF Patients at CC</a></li>
+<li class="chapter" data-level="2.1.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#hf-patients-prospectively-enrolled-in-the-heartshare-study"><i class="fa fa-check"></i><b>2.1.2</b> HF Patients Prospectively Enrolled in the HeartShare Study</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#table-or-result-specs"><i class="fa fa-check"></i><b>2.3</b> Table or Result Specs</a>
+<li class="chapter" data-level="2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#omop-tables-usage"><i class="fa fa-check"></i><b>2.2</b> OMOP Tables Usage</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#person"><i class="fa fa-check"></i><b>2.3.1</b> PERSON</a></li>
-<li class="chapter" data-level="2.3.2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#visit_occurence-and-visit_detail"><i class="fa fa-check"></i><b>2.3.2</b> VISIT_OCCURENCE and VISIT_DETAIL</a></li>
-<li class="chapter" data-level="2.3.3" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#condition_occurence"><i class="fa fa-check"></i><b>2.3.3</b> CONDITION_OCCURENCE</a></li>
-<li class="chapter" data-level="2.3.4" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#measurement-lvef-only"><i class="fa fa-check"></i><b>2.3.4</b> MEASUREMENT (LVEF ONLY)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#clinical-data-tables"><i class="fa fa-check"></i><b>2.2.1</b> Clinical Data Tables</a></li>
+<li class="chapter" data-level="2.2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-system-data-tables"><i class="fa fa-check"></i><b>2.2.2</b> Health System Data Tables</a></li>
+<li class="chapter" data-level="2.2.3" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-economics-data-tables"><i class="fa fa-check"></i><b>2.2.3</b> Health Economics Data Tables</a></li>
+<li class="chapter" data-level="2.2.4" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#standardized-derived-elements"><i class="fa fa-check"></i><b>2.2.4</b> Standardized Derived Elements</a></li>
+<li class="chapter" data-level="2.2.5" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabulary-tables"><i class="fa fa-check"></i><b>2.2.5</b> Vocabulary Tables</a></li>
+<li class="chapter" data-level="2.2.6" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabularies-to-load"><i class="fa fa-check"></i><b>2.2.6</b> Vocabularies to Load</a></li>
+<li class="chapter" data-level="2.2.7" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#echo-measurement"><i class="fa fa-check"></i><b>2.2.7</b> Echo Measurement</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Previous Data Calls</b></span></li>
-<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html"><i class="fa fa-check"></i>In-Person HeartShare AMP [2022-09-29]</a>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html"><i class="fa fa-check"></i>EHR Data Call for demographic and LVEF</a>
 <ul>
-<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#general-description-and-notes-1"><i class="fa fa-check"></i>General Description and Notes</a></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#general-description-and-notes"><i class="fa fa-check"></i>General Description and Notes</a></li>
 <li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#cohort-1"><i class="fa fa-check"></i>Cohort</a>
 <ul>
 <li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#icd-10-codes-1"><i class="fa fa-check"></i>ICD-10 Codes</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#table-or-result-specs-1"><i class="fa fa-check"></i>Table or Result Specs</a></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#table-or-result-specs"><i class="fa fa-check"></i>Table or Result Specs</a></li>
 <li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#results"><i class="fa fa-check"></i>Results</a></li>
 </ul></li>
 </ul>
@@ -131,15 +137,17 @@
 
             <section class="normal" id="section-">
 <div id="heartshareamp2022" class="section level1 unnumbered hasAnchor">
-<h1>In-Person HeartShare AMP [2022-09-29]<a href="heartshareamp2022.html#heartshareamp2022" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<h1>EHR Data Call for demographic and LVEF<a href="heartshareamp2022.html#heartshareamp2022" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<p>Approval date: Monday 2022-12-19</p>
+<p>Due date: Wednesday 2023-03-01</p>
 <p>Status: Completed</p>
-<div id="general-description-and-notes-1" class="section level2 unnumbered hasAnchor">
-<h2>General Description and Notes<a href="heartshareamp2022.html#general-description-and-notes-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="general-description-and-notes" class="section level2 unnumbered hasAnchor">
+<h2>General Description and Notes<a href="heartshareamp2022.html#general-description-and-notes" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>During the in-person meeting on September 29, 2022, we hoped to convey the potential size of the pool of HF participants across HeartShare Clinical Centers.</p>
 </div>
 <div id="cohort-1" class="section level2 unnumbered hasAnchor">
 <h2>Cohort<a href="heartshareamp2022.html#cohort-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>please query your site’s EHR data to collect numbers and basic information about your site’s total HF patients whose data and images can be queried from the EHR.</p>
+<p>Please query your site’s EHR data to collect numbers and basic information about your site’s total HF patients whose data and images can be queried from the EHR.</p>
 <p>Selection criteria: follow DTC guidelines to identify HF patients (all EFs) in the EHR 2016 onwards (ICD-10 implementation date)</p>
 <ul>
 <li>Age: <span class="math inline">\(\geq\)</span> 18, if used age cut off at 30 as had been previously discussed just indicate that</li>
@@ -157,8 +165,8 @@ I50.813,  I50.814,  I50.82,  I50.83,  I50.84,
 I50.89,  I50.9</code></pre>
 </div>
 </div>
-<div id="table-or-result-specs-1" class="section level2 unnumbered hasAnchor">
-<h2>Table or Result Specs<a href="heartshareamp2022.html#table-or-result-specs-1" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<div id="table-or-result-specs" class="section level2 unnumbered hasAnchor">
+<h2>Table or Result Specs<a href="heartshareamp2022.html#table-or-result-specs" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>We need the following data (age, sex, and race/ethnicity are most important, but EF would be great, especially to categorize into the types of HF [HFpEF, HFmrEF, HFrEF]). If you can, please document the source of the LVEF (from Echo? NLP extraction from notes?) :</p>
 <ul>
 <li>Age: median, IQR, mean, SD, range</li>
@@ -179,7 +187,7 @@ I50.89,  I50.9</code></pre>
           </div>
         </div>
       </div>
-<a href="active-ehr-data-call.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="heartshare-retrospective-cohort-details.html" class="navigation navigation-prev navigation-unique" aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
 
     </div>
   </div>

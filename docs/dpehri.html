@@ -6,7 +6,7 @@
   <meta http-equiv="X-UA-Compatible" content="IE=edge" />
   <title>1 The Data Portal and EHR Integration Working Group | HeartShare EHR Integration Manual</title>
   <meta name="description" content="Documentation of EHR data integration specifications" />
-  <meta name="generator" content="bookdown 0.31 and GitBook 2.6.7" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
 
   <meta property="og:title" content="1 The Data Portal and EHR Integration Working Group | HeartShare EHR Integration Manual" />
   <meta property="og:type" content="book" />
@@ -23,7 +23,7 @@
 <meta name="author" content="HeartShare Data Portal and EHR Integration Working Group" />
 
 
-<meta name="date" content="2022-12-26" />
+<meta name="date" content="2023-10-13" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -31,7 +31,7 @@
   
   
 <link rel="prev" href="index.html"/>
-<link rel="next" href="active-ehr-data-call.html"/>
+<link rel="next" href="heartshare-retrospective-cohort-details.html"/>
 <script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
 <script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
 <link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
@@ -55,6 +55,10 @@
 
 
 
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
 
 </head>
 
@@ -86,31 +90,33 @@
 </ul></li>
 <li class="chapter" data-level="1.6" data-path="dpehri.html"><a href="dpehri.html#where-will-the-ehr-data-be-analyzed"><i class="fa fa-check"></i><b>1.6</b> Where Will the EHR Data Be Analyzed?</a></li>
 </ul></li>
-<li class="chapter" data-level="2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html"><i class="fa fa-check"></i><b>2</b> Active EHR Data Call</a>
+<li class="chapter" data-level="2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html"><i class="fa fa-check"></i><b>2</b> HeartShare Retrospective Cohort Details</a>
 <ul>
-<li class="chapter" data-level="2.1" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#general-description-and-notes"><i class="fa fa-check"></i><b>2.1</b> General Description and Notes</a></li>
-<li class="chapter" data-level="2.2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#cohort"><i class="fa fa-check"></i><b>2.2</b> Cohort</a>
+<li class="chapter" data-level="2.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#cohort"><i class="fa fa-check"></i><b>2.1</b> Cohort</a>
 <ul>
-<li class="chapter" data-level="2.2.1" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#historical-hf-patients-at-cc"><i class="fa fa-check"></i><b>2.2.1</b> Historical HF Patients at CC</a></li>
-<li class="chapter" data-level="2.2.2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#hf-patients-prospectively-enrolled-in-the-heartshare-study"><i class="fa fa-check"></i><b>2.2.2</b> HF Patients Prospectively Enrolled in the HeartShare Study</a></li>
+<li class="chapter" data-level="2.1.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#historical-hf-patients-at-cc"><i class="fa fa-check"></i><b>2.1.1</b> Historical HF Patients at CC</a></li>
+<li class="chapter" data-level="2.1.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#hf-patients-prospectively-enrolled-in-the-heartshare-study"><i class="fa fa-check"></i><b>2.1.2</b> HF Patients Prospectively Enrolled in the HeartShare Study</a></li>
 </ul></li>
-<li class="chapter" data-level="2.3" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#table-or-result-specs"><i class="fa fa-check"></i><b>2.3</b> Table or Result Specs</a>
+<li class="chapter" data-level="2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#omop-tables-usage"><i class="fa fa-check"></i><b>2.2</b> OMOP Tables Usage</a>
 <ul>
-<li class="chapter" data-level="2.3.1" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#person"><i class="fa fa-check"></i><b>2.3.1</b> PERSON</a></li>
-<li class="chapter" data-level="2.3.2" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#visit_occurence-and-visit_detail"><i class="fa fa-check"></i><b>2.3.2</b> VISIT_OCCURENCE and VISIT_DETAIL</a></li>
-<li class="chapter" data-level="2.3.3" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#condition_occurence"><i class="fa fa-check"></i><b>2.3.3</b> CONDITION_OCCURENCE</a></li>
-<li class="chapter" data-level="2.3.4" data-path="active-ehr-data-call.html"><a href="active-ehr-data-call.html#measurement-lvef-only"><i class="fa fa-check"></i><b>2.3.4</b> MEASUREMENT (LVEF ONLY)</a></li>
+<li class="chapter" data-level="2.2.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#clinical-data-tables"><i class="fa fa-check"></i><b>2.2.1</b> Clinical Data Tables</a></li>
+<li class="chapter" data-level="2.2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-system-data-tables"><i class="fa fa-check"></i><b>2.2.2</b> Health System Data Tables</a></li>
+<li class="chapter" data-level="2.2.3" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-economics-data-tables"><i class="fa fa-check"></i><b>2.2.3</b> Health Economics Data Tables</a></li>
+<li class="chapter" data-level="2.2.4" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#standardized-derived-elements"><i class="fa fa-check"></i><b>2.2.4</b> Standardized Derived Elements</a></li>
+<li class="chapter" data-level="2.2.5" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabulary-tables"><i class="fa fa-check"></i><b>2.2.5</b> Vocabulary Tables</a></li>
+<li class="chapter" data-level="2.2.6" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabularies-to-load"><i class="fa fa-check"></i><b>2.2.6</b> Vocabularies to Load</a></li>
+<li class="chapter" data-level="2.2.7" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#echo-measurement"><i class="fa fa-check"></i><b>2.2.7</b> Echo Measurement</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Previous Data Calls</b></span></li>
-<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html"><i class="fa fa-check"></i>In-Person HeartShare AMP [2022-09-29]</a>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html"><i class="fa fa-check"></i>EHR Data Call for demographic and LVEF</a>
 <ul>
-<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#general-description-and-notes-1"><i class="fa fa-check"></i>General Description and Notes</a></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#general-description-and-notes"><i class="fa fa-check"></i>General Description and Notes</a></li>
 <li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#cohort-1"><i class="fa fa-check"></i>Cohort</a>
 <ul>
 <li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#icd-10-codes-1"><i class="fa fa-check"></i>ICD-10 Codes</a></li>
 </ul></li>
-<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#table-or-result-specs-1"><i class="fa fa-check"></i>Table or Result Specs</a></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#table-or-result-specs"><i class="fa fa-check"></i>Table or Result Specs</a></li>
 <li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#results"><i class="fa fa-check"></i>Results</a></li>
 </ul></li>
 </ul>
@@ -144,12 +150,12 @@
 <li>Describe and characterize the scope, composition and ready availability of EHR data for HF patients across HeartShare</li>
 <li>Aid the identification and enrollment of HF and HFpEF patients with bespoke clinical features into the HeartShare Study if and when needed</li>
 <li>Provide a platform for the real-world application of EHR-based HFpEF phenotypes which can be used to find patient sub-populations and drive iterative phenotype validation and refinement.</li>
-<li>Resource for investigators interested in multi-site analyses e.g. study the uptake of specific treatments, gather pilot data to support ancillary grants, or trainees working on their projects</li>
+<li>Resource for investigators interested in multi-site analyses (e.g., study the uptake of specific treatments, gather pilot data to support ancillary grants)</li>
 </ul>
 </div>
 <div id="dpehri_whose" class="section level2 hasAnchor" number="1.3">
 <h2><span class="header-section-number">1.3</span> Whose EHR Records Are Collected and for What Time Span?<a href="dpehri.html#dpehri_whose" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>Broadly speaking the EHR records that are included in the HeartShare data calls are for Heart Failure patients and their comparator groups from the HeartShare Clinical Centers (CC). For these cohorts, we aim to collect <strong>retrospective</strong> longitudinal data. In other words we are looking to gather as complete a longitudinal picture of these patients’ HF journey as we can, even prior to the launch of the HeartShare study or even their HF diagnosis. Based on technical feasibility, analysis aims, and regulatory requirements the retrospective data set may be collected once (one time) or collected once then periodically updated (one time with “top offs”). In the latter case, the DP and EHRI WG in consultation with the HeartShare CCs will determine the adequate scope and frequency of the data set updates.</p>
+<p>Broadly speaking the EHR records that are included in the HeartShare data calls are for Heart Failure patients and their comparator groups from the HeartShare Clinical Centers (CC). For these cohorts, we aim to collect <strong>retrospective</strong> longitudinal data. In other words, we are looking to gather as complete a longitudinal picture of these patients’ HF journey as we can, even prior to the launch of the HeartShare study or even their HF diagnosis. Based on technical feasibility, analysis aims, and regulatory requirements the retrospective data set may be collected once (one time) or collected once then periodically updated (one time with “top offs”). In the latter case, the DP and EHRI WG in consultation with the HeartShare CCs will determine the adequate scope and frequency of the data set updates.</p>
 <p>It is also useful to highlight the two cohort categories below:</p>
 <div id="the-entire-pool-of-hf-patients-with-ehr-records" class="section level3 hasAnchor" number="1.3.1">
 <h3><span class="header-section-number">1.3.1</span> The Entire Pool of HF Patients with EHR Records<a href="dpehri.html#the-entire-pool-of-hf-patients-with-ehr-records" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -162,16 +168,16 @@
 </div>
 <div id="what-ehr-data-are-in-scope" class="section level2 hasAnchor" number="1.4">
 <h2><span class="header-section-number">1.4</span> What EHR Data Are in Scope?<a href="dpehri.html#what-ehr-data-are-in-scope" class="anchor-section" aria-label="Anchor link to header"></a></h2>
-<p>The data domains that will be included will be prioritized based on their relevance to the HeartShare scientific goals. Informed by the overall aims of HeartShare and the unfolding of the main studies, the DP and EHRI WG will work to define the EHR domains following an incremental approach. The following diagram shows a high level roadmap of the domains we will be seeking, starting with the innermost sets and expanding outwards. Note that there will be domains (red) for which there may not be clear pathway for mapping to the OMOP CDM. In addition to specifying the requirements, the DP and EHRI WG will set guidelines on the procedures for obtaining data from ancillary data sources where they reside. Furthermore, there may be a need to examine the pertinent vocabularies and propose additions where needed. (e.g. by working through the OHDSI community’s <a href="http://ohdsi.github.io/CommonDataModel/cdmRefreshProcess.html">CDM Refresh Process</a>.) This will offer an opportunity for the work in HeartShare to inform EHR-based phenotyping in the field in general.</p>
+<p>The data domains that will be included will be prioritized based on their relevance to the HeartShare scientific goals. Informed by the overall aims of HeartShare and the unfolding of the main studies, the DP and EHRI WG will work to define the EHR domains. The following diagram shows a high-level roadmap of the domains we will be seeking. Note that there will be domains (red) for which there may not be a clear pathway for mapping to the OMOP CDM. In addition to specifying the requirements, the DP and EHRI WG will set guidelines on the procedures for obtaining data from ancillary data sources where they reside. Furthermore, there may be a need to examine the pertinent vocabularies and propose additions where needed. (e.g., by working through the OHDSI community’s <a href="http://ohdsi.github.io/CommonDataModel/cdmRefreshProcess.html">CDM Refresh Process</a>.) This will offer an opportunity for the work in HeartShare to inform EHR-based phenotyping in the field in general.</p>
 <p><img src="images/heartshareamp_ehr_domains.png" /><!-- --></p>
 </div>
 <div id="how-will-ehr-data-be-extracted-and-prepared-for-analysis" class="section level2 hasAnchor" number="1.5">
 <h2><span class="header-section-number">1.5</span> How Will EHR Data Be Extracted and Prepared for Analysis?<a href="dpehri.html#how-will-ehr-data-be-extracted-and-prepared-for-analysis" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>There will be two steps for data extraction and harmonization into a format amenable to uniform analysis across all HeartShare CCs.</p>
-<p><img src="images/heartshareamp_ehr_to_OMOP.png" /><!-- --></p>
+<p><img src="images/heartshareamp_ehr_to_omop.png" /><!-- --></p>
 <div id="local-ehr-query-cohort-identification-and-domain-selection." class="section level3 hasAnchor" number="1.5.1">
 <h3><span class="header-section-number">1.5.1</span> Local EHR Query: Cohort Identification and Domain Selection.<a href="dpehri.html#local-ehr-query-cohort-identification-and-domain-selection." class="anchor-section" aria-label="Anchor link to header"></a></h3>
-<p>This step is highly variable and depends on the local EHR data stores within each CC. This step will rely on cohort definitions to identify the appropriate patients. In this step, only the domains salient to the current data calls will be included (filter-in approach).</p>
+<p>This step is highly variable and depends on the local EHR data stores within each CC. This step will rely on cohort definitions to identify the appropriate patients.</p>
 </div>
 <div id="extract-transform-load-harmonization-using-the-omop-cdm" class="section level3 hasAnchor" number="1.5.2">
 <h3><span class="header-section-number">1.5.2</span> Extract, Transform, Load: Harmonization Using the OMOP CDM<a href="dpehri.html#extract-transform-load-harmonization-using-the-omop-cdm" class="anchor-section" aria-label="Anchor link to header"></a></h3>
@@ -186,7 +192,7 @@
 <p><img src="images/heartshare_ehr_localanalysis.png" /><!-- --></p>
 <p><strong>Scenario 1:</strong> local analysis because a DTA is not feasible for a given population or a DTA has not been signed yet, followed by pooling of analysis results</p>
 <p><img src="images/heartshare_ehr_centralanalysis.png" /><!-- --></p>
-<p><strong>Scenario 2</strong>: pooling of data into the a central location managed by the HeartShare DTC followed by one central analysis</p>
+<p><strong>Scenario 2</strong>: pooling of data into a central location managed by the HeartShare DTC followed by one central analysis</p>
 
 </div>
 </div>
@@ -196,7 +202,7 @@
         </div>
       </div>
 <a href="index.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
-<a href="active-ehr-data-call.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+<a href="heartshare-retrospective-cohort-details.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
     </div>
   </div>
 <script src="libs/gitbook-2.6.7/js/app.min.js"></script>

@@ -1,0 +1,481 @@
+<!DOCTYPE html>
+<html lang="" xml:lang="">
+<head>
+
+  <meta charset="utf-8" />
+  <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+  <title>2 HeartShare Retrospective Cohort Details | HeartShare EHR Integration Manual</title>
+  <meta name="description" content="Documentation of EHR data integration specifications" />
+  <meta name="generator" content="bookdown 0.34 and GitBook 2.6.7" />
+
+  <meta property="og:title" content="2 HeartShare Retrospective Cohort Details | HeartShare EHR Integration Manual" />
+  <meta property="og:type" content="book" />
+  
+  <meta property="og:description" content="Documentation of EHR data integration specifications" />
+  
+
+  <meta name="twitter:card" content="summary" />
+  <meta name="twitter:title" content="2 HeartShare Retrospective Cohort Details | HeartShare EHR Integration Manual" />
+  
+  <meta name="twitter:description" content="Documentation of EHR data integration specifications" />
+  
+
+<meta name="author" content="HeartShare Data Portal and EHR Integration Working Group" />
+
+
+<meta name="date" content="2023-10-13" />
+
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <meta name="apple-mobile-web-app-capable" content="yes" />
+  <meta name="apple-mobile-web-app-status-bar-style" content="black" />
+  
+  
+<link rel="prev" href="dpehri.html"/>
+<link rel="next" href="heartshareamp2022.html"/>
+<script src="libs/jquery-3.6.0/jquery-3.6.0.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/fuse.js@6.4.6/dist/fuse.min.js"></script>
+<link href="libs/gitbook-2.6.7/css/style.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-table.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-bookdown.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-highlight.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-search.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-fontsettings.css" rel="stylesheet" />
+<link href="libs/gitbook-2.6.7/css/plugin-clipboard.css" rel="stylesheet" />
+
+
+
+
+
+
+
+
+<link href="libs/anchor-sections-1.1.0/anchor-sections.css" rel="stylesheet" />
+<link href="libs/anchor-sections-1.1.0/anchor-sections-hash.css" rel="stylesheet" />
+<script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
+
+
+
+<style type="text/css">
+  
+  div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+</style>
+
+</head>
+
+<body>
+
+
+
+  <div class="book without-animation with-summary font-size-2 font-family-1" data-basepath=".">
+
+    <div class="book-summary">
+      <nav role="navigation">
+
+<ul class="summary">
+<li class="chapter" data-level="" data-path="index.html"><a href="index.html"><i class="fa fa-check"></i>About this Document</a></li>
+<li class="chapter" data-level="1" data-path="dpehri.html"><a href="dpehri.html"><i class="fa fa-check"></i><b>1</b> The Data Portal and EHR Integration Working Group</a>
+<ul>
+<li class="chapter" data-level="1.1" data-path="dpehri.html"><a href="dpehri.html#dpehri_mandate"><i class="fa fa-check"></i><b>1.1</b> Mandate</a></li>
+<li class="chapter" data-level="1.2" data-path="dpehri.html"><a href="dpehri.html#dpehri_aim"><i class="fa fa-check"></i><b>1.2</b> EHR Integration Purpose</a></li>
+<li class="chapter" data-level="1.3" data-path="dpehri.html"><a href="dpehri.html#dpehri_whose"><i class="fa fa-check"></i><b>1.3</b> Whose EHR Records Are Collected and for What Time Span?</a>
+<ul>
+<li class="chapter" data-level="1.3.1" data-path="dpehri.html"><a href="dpehri.html#the-entire-pool-of-hf-patients-with-ehr-records"><i class="fa fa-check"></i><b>1.3.1</b> The Entire Pool of HF Patients with EHR Records</a></li>
+<li class="chapter" data-level="1.3.2" data-path="dpehri.html"><a href="dpehri.html#patients-enrolled-in-heartshare"><i class="fa fa-check"></i><b>1.3.2</b> Patients Enrolled in HeartShare</a></li>
+</ul></li>
+<li class="chapter" data-level="1.4" data-path="dpehri.html"><a href="dpehri.html#what-ehr-data-are-in-scope"><i class="fa fa-check"></i><b>1.4</b> What EHR Data Are in Scope?</a></li>
+<li class="chapter" data-level="1.5" data-path="dpehri.html"><a href="dpehri.html#how-will-ehr-data-be-extracted-and-prepared-for-analysis"><i class="fa fa-check"></i><b>1.5</b> How Will EHR Data Be Extracted and Prepared for Analysis?</a>
+<ul>
+<li class="chapter" data-level="1.5.1" data-path="dpehri.html"><a href="dpehri.html#local-ehr-query-cohort-identification-and-domain-selection."><i class="fa fa-check"></i><b>1.5.1</b> Local EHR Query: Cohort Identification and Domain Selection.</a></li>
+<li class="chapter" data-level="1.5.2" data-path="dpehri.html"><a href="dpehri.html#extract-transform-load-harmonization-using-the-omop-cdm"><i class="fa fa-check"></i><b>1.5.2</b> Extract, Transform, Load: Harmonization Using the OMOP CDM</a></li>
+</ul></li>
+<li class="chapter" data-level="1.6" data-path="dpehri.html"><a href="dpehri.html#where-will-the-ehr-data-be-analyzed"><i class="fa fa-check"></i><b>1.6</b> Where Will the EHR Data Be Analyzed?</a></li>
+</ul></li>
+<li class="chapter" data-level="2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html"><i class="fa fa-check"></i><b>2</b> HeartShare Retrospective Cohort Details</a>
+<ul>
+<li class="chapter" data-level="2.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#cohort"><i class="fa fa-check"></i><b>2.1</b> Cohort</a>
+<ul>
+<li class="chapter" data-level="2.1.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#historical-hf-patients-at-cc"><i class="fa fa-check"></i><b>2.1.1</b> Historical HF Patients at CC</a></li>
+<li class="chapter" data-level="2.1.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#hf-patients-prospectively-enrolled-in-the-heartshare-study"><i class="fa fa-check"></i><b>2.1.2</b> HF Patients Prospectively Enrolled in the HeartShare Study</a></li>
+</ul></li>
+<li class="chapter" data-level="2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#omop-tables-usage"><i class="fa fa-check"></i><b>2.2</b> OMOP Tables Usage</a>
+<ul>
+<li class="chapter" data-level="2.2.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#clinical-data-tables"><i class="fa fa-check"></i><b>2.2.1</b> Clinical Data Tables</a></li>
+<li class="chapter" data-level="2.2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-system-data-tables"><i class="fa fa-check"></i><b>2.2.2</b> Health System Data Tables</a></li>
+<li class="chapter" data-level="2.2.3" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-economics-data-tables"><i class="fa fa-check"></i><b>2.2.3</b> Health Economics Data Tables</a></li>
+<li class="chapter" data-level="2.2.4" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#standardized-derived-elements"><i class="fa fa-check"></i><b>2.2.4</b> Standardized Derived Elements</a></li>
+<li class="chapter" data-level="2.2.5" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabulary-tables"><i class="fa fa-check"></i><b>2.2.5</b> Vocabulary Tables</a></li>
+<li class="chapter" data-level="2.2.6" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabularies-to-load"><i class="fa fa-check"></i><b>2.2.6</b> Vocabularies to Load</a></li>
+<li class="chapter" data-level="2.2.7" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#echo-measurement"><i class="fa fa-check"></i><b>2.2.7</b> Echo Measurement</a></li>
+</ul></li>
+</ul></li>
+<li class="part"><span><b>Previous Data Calls</b></span></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html"><i class="fa fa-check"></i>EHR Data Call for demographic and LVEF</a>
+<ul>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#general-description-and-notes"><i class="fa fa-check"></i>General Description and Notes</a></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#cohort-1"><i class="fa fa-check"></i>Cohort</a>
+<ul>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#icd-10-codes-1"><i class="fa fa-check"></i>ICD-10 Codes</a></li>
+</ul></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#table-or-result-specs"><i class="fa fa-check"></i>Table or Result Specs</a></li>
+<li class="chapter" data-level="" data-path="heartshareamp2022.html"><a href="heartshareamp2022.html#results"><i class="fa fa-check"></i>Results</a></li>
+</ul></li>
+</ul>
+
+      </nav>
+    </div>
+
+    <div class="book-body">
+      <div class="body-inner">
+        <div class="book-header" role="navigation">
+          <h1>
+            <i class="fa fa-circle-o-notch fa-spin"></i><a href="./">HeartShare EHR Integration Manual</a>
+          </h1>
+        </div>
+
+        <div class="page-wrapper" tabindex="-1" role="main">
+          <div class="page-inner">
+
+            <section class="normal" id="section-">
+<div id="heartshare-retrospective-cohort-details" class="section level1 hasAnchor" number="2">
+<h1><span class="header-section-number">2</span> HeartShare Retrospective Cohort Details<a href="heartshare-retrospective-cohort-details.html#heartshare-retrospective-cohort-details" class="anchor-section" aria-label="Anchor link to header"></a></h1>
+<div id="cohort" class="section level2 hasAnchor" number="2.1">
+<h2><span class="header-section-number">2.1</span> Cohort<a href="heartshare-retrospective-cohort-details.html#cohort" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>As currently proposed, there will be <strong>two cohorts</strong> of HF patients whose records are to be included in the OMOP tables. This does not include their comparator groups yet as the cohort definition criteria for them is still being developed.</p>
+<div id="historical-hf-patients-at-cc" class="section level3 hasAnchor" number="2.1.1">
+<h3><span class="header-section-number">2.1.1</span> Historical HF Patients at CC<a href="heartshare-retrospective-cohort-details.html#historical-hf-patients-at-cc" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="selection-criteria" class="section level4 hasAnchor" number="2.1.1.1">
+<h4><span class="header-section-number">2.1.1.1</span> Selection criteria<a href="heartshare-retrospective-cohort-details.html#selection-criteria" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<p>Selection criteria: follow DTC guidelines to identify HF patients (all EFs) in the EHR 2016 onwards (ICD-10 implementation date), namely:</p>
+<ul>
+<li>Age: <span class="math inline">\(\geq\)</span> 18, if used age cut off at 30 as had been previously discussed just indicate that</li>
+<li>Presence of ICD-10 Codes: 2 outpatient encounters or 1 inpatient (for list of codes see below)</li>
+</ul>
+<p>Please do not use any additional filtering criteria. If you are using any (e.g., BNP cut off value) please indicate that in your response to the DTC.</p>
+</div>
+<div id="icd-10-codes" class="section level4 hasAnchor" number="2.1.1.2">
+<h4><span class="header-section-number">2.1.1.2</span> ICD-10 Codes<a href="heartshare-retrospective-cohort-details.html#icd-10-codes" class="anchor-section" aria-label="Anchor link to header"></a></h4>
+<pre><code>I09.81,  I11.0,  I13.0,  I13.2,  I50.1,  
+I50.20,  I50.21,  I50.22,  I50.23,  I50.30,  
+I50.31,  I50.32,  I50.33,  I50.40,  I50.41,  
+I50.42,  I50.43,  I50.810,  I50.811,  I50.812,  
+I50.813,  I50.814,  I50.82,  I50.83,  I50.84,  
+I50.89,  I50.9</code></pre>
+</div>
+</div>
+<div id="hf-patients-prospectively-enrolled-in-the-heartshare-study" class="section level3 hasAnchor" number="2.1.2">
+<h3><span class="header-section-number">2.1.2</span> HF Patients Prospectively Enrolled in the HeartShare Study<a href="heartshare-retrospective-cohort-details.html#hf-patients-prospectively-enrolled-in-the-heartshare-study" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Patients in the HF arms of the HeartShare Study, both the HeartShare HF Registry and the HFpEF Deep Phenotyping Cohorts, are also to be included as they enroll in the study and provide informed consent and EHR authorization via the Eureka app.</p>
+</div>
+</div>
+<div id="omop-tables-usage" class="section level2 hasAnchor" number="2.2">
+<h2><span class="header-section-number">2.2</span> OMOP Tables Usage<a href="heartshare-retrospective-cohort-details.html#omop-tables-usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
+<p>All the tables are congruent with <a href="https://ohdsi.github.io/CommonDataModel/cdm53.html"><strong>OMOP CDM v.5.3.1</strong></a>. Required tables are expected to be populated with the data and are listed in <strong><span style="color: black;">bold letters</span></strong>. Optional tables can be left empty for now are listed in <span style="color: gray;">gray</span>. A link to the corresponding table definitions in the OMOP CDM is provided for each table.</p>
+<p>If possible, we ask that patient data for the tables are populated starting 10 years prior to the date patient qualified for the cohort (selection criteria looks in the EHR records starting with year 2016; If patient qualified in 2020, cohort should include patients’ data from 2010 onwards).</p>
+<p>We anticipate managing HeartShare cohorts by using OMOP CDM COHORT% tables. More information will follow.</p>
+<div id="clinical-data-tables" class="section level3 hasAnchor" number="2.2.1">
+<h3><span class="header-section-number">2.2.1</span> Clinical Data Tables<a href="heartshare-retrospective-cohort-details.html#clinical-data-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Clinical_Data_Tables">https://ohdsi.github.io/CommonDataModel/cdm53.html#Clinical_Data_Tables</a></p>
+<ul>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PERSON"><strong><span style="color: black;">PERSON</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#OBSERVATION_PERIOD"><strong><span style="color: black;">OBSERVATION_PERIOD</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_OCCURRENCE"><strong><span style="color: black;">VISIT_OCCURENCE</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_DETAIL"><span style="color: gray;">VISIT_DETAIL</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONDITION_OCCURRENCE"><strong><span style="color: black;">CONDITION_OCCURRENCE</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_EXPOSURE"><strong><span style="color: black;">DRUG_EXPOSURE</span></strong></a></p>
+<ul>
+<li>If possible, we recommend loading all of the medication data. For sites that are building de novo OMOP tables, selective loading should focus on cardiovascular drugs that fall under the following ATC classes: alimentary tract and metabolism, blood and blood forming organs, and cardiovascular systems.</li>
+</ul></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PROCEDURE_OCCURRENCE"><strong><span style="color: black;">PROCEDURE_OCCURRENCE</span></strong></a></p>
+<ul>
+<li>If possible, we recommend loading all procedures. In particular, we would like sites to confirm the loading of <a href="https://athena.ohdsi.org/search-terms/terms/45888880">these procedures</a>.</li>
+</ul></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DEVICE_EXPOSURE"><span style="color: gray;">DEVICE_EXPOSURE</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#MEASUREMENT"><strong><span style="color: black;">MEASUREMENT</span></strong></a></p>
+<ul>
+<li><p>If possible, we recommend loading all of measurement data, including vitals. For sites that are building de novo OMOP tables, lists of high value labs and vitals will be forthcoming for selective loading.</p></li>
+<li><p>See details for loading echocardiogram data below.</p></li>
+</ul></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#OBSERVATION"><strong><span style="color: black;">OBSERVATION</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DEATH"><strong><span style="color: black;">DEATH</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#NOTE"><strong><span style="color: black;">NOTE</span></strong></a></p>
+<ul>
+<li>We recommend loading notes for echocardiogram, cardiac cath, and ECG if possible. Our initial priority will be loading echo notes locally. At Northwestern, we have used both an internally-developed text de-identification tool as well as an open source tool from Stanford called <a href="https://starr.stanford.edu/methods/tide-text-deid">TiDE</a>.</li>
+</ul></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#NOTE_NLP"><span style="color: gray;">NOTE_NLP</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#SPECIMEN"><span style="color: gray;">SPECIMEN</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#FACT_RELATIONSHIP"><span style="color: gray;">FACT_RELATIONSHIP</span></a></p></li>
+</ul>
+</div>
+<div id="health-system-data-tables" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Health System Data Tables<a href="heartshare-retrospective-cohort-details.html#health-system-data-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables">https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables</a></p>
+<ul>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables"><span style="color: gray;">LOCATION</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CARE_SITE"><span style="color: gray;">CARE_SITE</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PROVIDER"><span style="color: gray;">PROVIDER</span></a></p></li>
+</ul>
+</div>
+<div id="health-economics-data-tables" class="section level3 hasAnchor" number="2.2.3">
+<h3><span class="header-section-number">2.2.3</span> Health Economics Data Tables<a href="heartshare-retrospective-cohort-details.html#health-economics-data-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_Economics_Data_Tables">https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_Economics_Data_Tables</a></p>
+<ul>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PAYER_PLAN_PERIOD"><span style="color: gray;">PAYER_PLAN_PERIOD</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#COST"><span style="color: gray;">COST</span></a></p></li>
+</ul>
+</div>
+<div id="standardized-derived-elements" class="section level3 hasAnchor" number="2.2.4">
+<h3><span class="header-section-number">2.2.4</span> Standardized Derived Elements<a href="heartshare-retrospective-cohort-details.html#standardized-derived-elements" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Standardized_Derived_Elements">https://ohdsi.github.io/CommonDataModel/cdm53.html#Standardized_Derived_Elements</a></p>
+<ul>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_ERA"><strong><span style="color: black;">DRUG_ERA</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DOSE_ERA"><span style="color: gray;">DOSE_ERA</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONDITION_ERA"><strong><span style="color: black;">CONDITION_ERA</span></strong></a></p></li>
+</ul>
+</div>
+<div id="vocabulary-tables" class="section level3 hasAnchor" number="2.2.5">
+<h3><span class="header-section-number">2.2.5</span> Vocabulary Tables<a href="heartshare-retrospective-cohort-details.html#vocabulary-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Vocabulary_Tables">https://ohdsi.github.io/CommonDataModel/cdm53.html#Vocabulary_Tables</a></p>
+<ul>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT"><strong><span style="color: black;">CONCEPT</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#VOCABULARY"><strong><span style="color: black;">VOCABULARY</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DOMAIN"><strong><span style="color: black;">DOMAIN</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_CLASS"><strong><span style="color: black;">CONCEPT_CLASS</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_RELATIONSHIP"><strong><span style="color: black;">CONCEPT_RELATIONSHIP</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#RELATIONSHIP"><strong><span style="color: black;">RELATIONSHIP</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_SYNONYM"><strong><span style="color: black;">CONCEPT_SYNONYM</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_ANCESTOR"><strong><span style="color: black;">CONCEPT_ANCESTOR</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#SOURCE_TO_CONCEPT_MAP"><span style="color: gray;">SOURCE_TO_CONCEPT_MAP</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_STRENGTH"><span style="color: gray;">DRUG_STRENGTH</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#COHORT_DEFINITION"><span style="color: gray;">COHORT_DEFINITION</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#ATTRIBUTE_DEFINITION"><span style="color: gray;">ATTRIBUTE_DEFINITION</span></a></p></li>
+</ul>
+</div>
+<div id="vocabularies-to-load" class="section level3 hasAnchor" number="2.2.6">
+<h3><span class="header-section-number">2.2.6</span> Vocabularies to Load<a href="heartshare-retrospective-cohort-details.html#vocabularies-to-load" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Vocabularies can be downloaded from <a href="https://athena.ohdsi.org/vocabulary/list">https://athena.ohdsi.org/vocabulary/list</a>.
+Size of OMOP vocabularies is typically in the range of ~20GB. At a minimum, it is recommended to use the vocabularies below:</p>
+<table>
+<colgroup>
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+<col width="25%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th>ID (CDM V4.5)</th>
+<th>CODE (CDM V5)</th>
+<th>NAME</th>
+<th>LATEST UPDATE</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td>1</td>
+<td>SNOMED</td>
+<td>Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)</td>
+<td>27-Jan-22</td>
+</tr>
+<tr class="even">
+<td>2</td>
+<td>ICD9CM</td>
+<td>International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 1 and 2 (NCHS)</td>
+<td>30-Sep-14</td>
+</tr>
+<tr class="odd">
+<td>3</td>
+<td>ICD9Proc</td>
+<td>International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 3 (NCHS)</td>
+<td>30-Sep-14</td>
+</tr>
+<tr class="even">
+<td>4</td>
+<td>CPT4</td>
+<td>Current Procedural Terminology version 4 (AMA)</td>
+<td>30-Apr-23</td>
+</tr>
+<tr class="odd">
+<td>5</td>
+<td>HCPCS</td>
+<td>Healthcare Common Procedure Coding System (CMS)</td>
+<td>30-Jun-23</td>
+</tr>
+<tr class="even">
+<td>6</td>
+<td>LOINC</td>
+<td>Logical Observation Identifiers Names and Codes (Regenstrief Institute)</td>
+<td>14-Aug-23</td>
+</tr>
+<tr class="odd">
+<td>8</td>
+<td>RxNorm</td>
+<td>RxNorm (NLM)</td>
+<td>2-Jul-23</td>
+</tr>
+<tr class="even">
+<td>9</td>
+<td>NDC</td>
+<td>National Drug Code (FDA and manufacturers)</td>
+<td>26-Aug-23</td>
+</tr>
+<tr class="odd">
+<td>12</td>
+<td>Gender</td>
+<td>OMOP Gender</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>13</td>
+<td>Race</td>
+<td>Race and Ethnicity Code Set (USBC)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>14</td>
+<td>CMS Place of Service</td>
+<td>Place of Service Codes for Professional Claims (CMS)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>21</td>
+<td>ATC</td>
+<td>WHO Anatomic Therapeutic Chemical Classification</td>
+<td>6-Sep-21</td>
+</tr>
+<tr class="odd">
+<td>35</td>
+<td>ICD10PCS</td>
+<td>ICD-10 Procedure Coding System (CMS)</td>
+<td>30-Sep-20</td>
+</tr>
+<tr class="even">
+<td>40</td>
+<td>DRG</td>
+<td>Diagnosis-related group (CMS)</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>41</td>
+<td>MDC</td>
+<td>Major Diagnostic Categories (CMS)</td>
+<td></td>
+</tr>
+<tr class="even">
+<td>44</td>
+<td>Ethnicity</td>
+<td>OMOP Ethnicity</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>70</td>
+<td>ICD10CM</td>
+<td>International Classification of Diseases, Tenth Revision, Clinical Modification (NCHS)</td>
+<td>30-Sep-22</td>
+</tr>
+<tr class="even">
+<td>82</td>
+<td>RxNorm Extension</td>
+<td>OMOP RxNorm Extension</td>
+<td>23-Aug-23</td>
+</tr>
+<tr class="odd">
+<td>88</td>
+<td>CVX</td>
+<td>CDC Vaccine Administered CVX (NCIRD)</td>
+<td>17-Apr-23</td>
+</tr>
+<tr class="even">
+<td>115</td>
+<td>Provider</td>
+<td>OMOP Provider</td>
+<td></td>
+</tr>
+<tr class="odd">
+<td>128</td>
+<td>OMOP Extension</td>
+<td>OMOP Extension (OHDSI)</td>
+<td>30-May-23</td>
+</tr>
+</tbody>
+</table>
+</div>
+<div id="echo-measurement" class="section level3 hasAnchor" number="2.2.7">
+<h3><span class="header-section-number">2.2.7</span> Echo Measurement<a href="heartshare-retrospective-cohort-details.html#echo-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<p>Echo measurements should be loaded into the MEASUREMENT table. Most of the echo variables could be matched to appropriate LOINC code(s). For variables where suitable standard codes were not found, custom vocabulary and custom concept mappings were created for capturing those values.The echo measurements should be able to be linked to echos in the PROCEDURE_OCCURRENCE table. For left ventricular ejection fraction, we recommend mapping the value in the echo reported by the echocardiographer to the most appropriate LOINC code. If the method of measurement is unknown, then use LOINC Code 8806-2, Left ventricular Ejection fraction by 2D echo.</p>
+<p><a href="https://heartsharestudy.github.io/PHENOTYPES/Echo%20Variables%20Mapping.html">Echo Variables Mappings</a></p>
+<p><a href="https://heartsharestudy.github.io/PHENOTYPES/HeartShare%20Vocabulary.html">Echo Variables Custom Vocabulary</a></p>
+
+</div>
+</div>
+</div>
+
+
+
+</div>
+            </section>
+
+          </div>
+        </div>
+      </div>
+<a href="dpehri.html" class="navigation navigation-prev " aria-label="Previous page"><i class="fa fa-angle-left"></i></a>
+<a href="heartshareamp2022.html" class="navigation navigation-next " aria-label="Next page"><i class="fa fa-angle-right"></i></a>
+    </div>
+  </div>
+<script src="libs/gitbook-2.6.7/js/app.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/clipboard.min.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-search.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-sharing.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-fontsettings.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-bookdown.js"></script>
+<script src="libs/gitbook-2.6.7/js/jquery.highlight.js"></script>
+<script src="libs/gitbook-2.6.7/js/plugin-clipboard.js"></script>
+<script>
+gitbook.require(["gitbook"], function(gitbook) {
+gitbook.start({
+"sharing": false,
+"fontsettings": {
+"theme": "white",
+"family": "sans",
+"size": 2
+},
+"edit": {
+"link": null,
+"text": null
+},
+"history": {
+"link": null,
+"text": null
+},
+"view": {
+"link": null,
+"text": null
+},
+"download": ["HeartShare_EHR_Specs.pdf"],
+"search": {
+"engine": "fuse",
+"options": null
+},
+"toc": {
+"collapse": "subsection"
+}
+});
+});
+</script>
+
+<!-- dynamically load mathjax for compatibility with self-contained -->
+<script>
+  (function () {
+    var script = document.createElement("script");
+    script.type = "text/javascript";
+    var src = "true";
+    if (src === "" || src === "true") src = "https://cdnjs.cloudflare.com/ajax/libs/mathjax/2.7.9/latest.js?config=TeX-MML-AM_CHTML";
+    if (location.protocol !== "file:")
+      if (/^https?:/.test(src))
+        src = src.replace(/^https?:/, '');
+    script.src = src;
+    document.getElementsByTagName("head")[0].appendChild(script);
+  })();
+</script>
+</body>
+
+</html>
