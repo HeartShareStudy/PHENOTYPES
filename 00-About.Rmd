@@ -13,12 +13,11 @@ The goal is to functionally integrate clinical care data for HF patients and the
 -   Describe and characterize the scope, composition and ready availability of EHR data for HF patients across HeartShare
 -   Aid the identification and enrollment of HF and HFpEF patients with bespoke clinical features into the HeartShare Study if and when needed
 -   Provide a platform for the real-world application of EHR-based HFpEF phenotypes which can be used to find patient sub-populations and drive iterative phenotype validation and refinement.
--   Resource for investigators interested in multi-site analyses e.g. study the uptake of specific treatments, gather pilot data to support ancillary grants, or trainees working on their projects
-
+-   Resource for investigators interested in multi-site analyses (e.g., study the uptake of specific treatments, gather pilot data to support ancillary grants)
 
 ## Whose EHR Records Are Collected and for What Time Span? {#dpehri_whose}
 
-Broadly speaking the EHR records that are included in the HeartShare data calls are for Heart Failure patients and their comparator groups from the HeartShare Clinical Centers (CC). For these cohorts, we aim to collect **retrospective** longitudinal data. In other words we are looking to gather as complete a longitudinal picture of these patients' HF journey as we can, even prior to the launch of the HeartShare study or even their HF diagnosis. Based on technical feasibility, analysis aims, and regulatory requirements the retrospective data set may be collected once (one time) or collected once then periodically updated (one time with "top offs"). In the latter case, the DP and EHRI WG in consultation with the HeartShare CCs will determine the adequate scope and frequency of the data set updates.
+Broadly speaking the EHR records that are included in the HeartShare data calls are for Heart Failure patients and their comparator groups from the HeartShare Clinical Centers (CC). For these cohorts, we aim to collect **retrospective** longitudinal data. In other words, we are looking to gather as complete a longitudinal picture of these patients' HF journey as we can, even prior to the launch of the HeartShare study or even their HF diagnosis. Based on technical feasibility, analysis aims, and regulatory requirements the retrospective data set may be collected once (one time) or collected once then periodically updated (one time with "top offs"). In the latter case, the DP and EHRI WG in consultation with the HeartShare CCs will determine the adequate scope and frequency of the data set updates.
 
 It is also useful to highlight the two cohort categories below:
 
@@ -32,7 +31,7 @@ This category is a subset of the category above and includes patients who are en
 
 ## What EHR Data Are in Scope?
 
-The data domains that will be included will be prioritized based on their relevance to the HeartShare scientific goals. Informed by the overall aims of HeartShare and the unfolding of the main studies, the DP and EHRI WG will work to define the EHR domains following an incremental approach. The following diagram shows a high level roadmap of the domains we will be seeking, starting with the innermost sets and expanding outwards. Note that there will be domains (red) for which there may not be clear pathway for mapping to the OMOP CDM. In addition to specifying the requirements, the DP and EHRI WG will set guidelines on the procedures for obtaining data from ancillary data sources where they reside. Furthermore, there may be a need to examine the pertinent vocabularies and propose additions where needed. (e.g. by working through the OHDSI community's [CDM Refresh Process](http://ohdsi.github.io/CommonDataModel/cdmRefreshProcess.html).) This will offer an opportunity for the work in HeartShare to inform EHR-based phenotyping in the field in general.
+The data domains that will be included will be prioritized based on their relevance to the HeartShare scientific goals. Informed by the overall aims of HeartShare and the unfolding of the main studies, the DP and EHRI WG will work to define the EHR domains. The following diagram shows a high-level roadmap of the domains we will be seeking. Note that there will be domains (red) for which there may not be a clear pathway for mapping to the OMOP CDM. In addition to specifying the requirements, the DP and EHRI WG will set guidelines on the procedures for obtaining data from ancillary data sources where they reside. Furthermore, there may be a need to examine the pertinent vocabularies and propose additions where needed. (e.g., by working through the OHDSI community's [CDM Refresh Process](http://ohdsi.github.io/CommonDataModel/cdmRefreshProcess.html).) This will offer an opportunity for the work in HeartShare to inform EHR-based phenotyping in the field in general.
 
 
 ```{r, echo=FALSE}
@@ -50,7 +49,7 @@ knitr::include_graphics("images/heartshareamp_ehr_to_omop.png")
 
 ### Local EHR Query: Cohort Identification and Domain Selection. 
 
-This step is highly variable and depends on the local EHR data stores within each CC. This step will rely on cohort definitions to identify the appropriate patients. In this step, only the domains salient to the current data calls will be included (filter-in approach).
+This step is highly variable and depends on the local EHR data stores within each CC. This step will rely on cohort definitions to identify the appropriate patients.
 
 ### Extract, Transform, Load: Harmonization Using the OMOP CDM
 
@@ -80,4 +79,4 @@ knitr::include_graphics("images/heartshare_ehr_localanalysis.png")
 knitr::include_graphics("images/heartshare_ehr_centralanalysis.png")
 ```
 
-**Scenario 2**: pooling of data into the a central location managed by the HeartShare DTC followed by one central analysis
+**Scenario 2**: pooling of data into a central location managed by the HeartShare DTC followed by one central analysis

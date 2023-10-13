@@ -2,9 +2,14 @@
 
 <!-- In the following sections, we will archive previous data requests. -->
 
-# In-Person HeartShare AMP [2022-09-29] {#heartshareamp2022 .unnumbered}
+# EHR Data Call for demographic and LVEF {#heartshareamp2022 .unnumbered}
+
+Approval date: Monday 2022-12-19
+
+Due date: Wednesday 2023-03-01
 
 Status: Completed
+
 
 ## General Description and Notes {-}
 
@@ -12,7 +17,7 @@ During the in-person meeting on September 29, 2022, we hoped to convey the poten
 
 ## Cohort {-}
 
-please query your site's EHR data to collect numbers and basic information about your site's total HF patients whose data and images can be queried from the EHR.
+Please query your site's EHR data to collect numbers and basic information about your site's total HF patients whose data and images can be queried from the EHR.
 
 Selection criteria: follow DTC guidelines to identify HF patients (all EFs) in the EHR 2016 onwards (ICD-10 implementation date)
 
