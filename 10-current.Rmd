@@ -1,19 +1,8 @@
-# Active EHR Data Call 
-
-Status: **APPROVED**
-
-Approval date: **Monday 2022-12-19**
-
-Due date: **Wednesday 2023-03-01**
-
-
-## General Description and Notes
-
-This is the first data call requesting the creation of OMOP CDM compatible table at the HeartShare Clinical Centers. It builds upon the  [initial heart failure data call](#heartshareamp2022) presented during the in-person HeartShare AMP meeting on September 29, 2022, and extends it to familiarize the HeartShare CCs with the OMOP CDM data table generation workflow.
+# HeartShare Retrospective Cohort Details 
 
 ## Cohort
 
-As currently proposed, there will be **two cohorts** of HF patients whose records are to be included in the OMOP tables. This does not include, yet, their comparator groups as the cohort definition criteria for them is still being developed.
+As currently proposed, there will be **two cohorts** of HF patients whose records are to be included in the OMOP tables. This does not include their comparator groups yet as the cohort definition criteria for them is still being developed.
 
 ### Historical HF Patients at CC
 
@@ -24,7 +13,7 @@ Selection criteria: follow DTC guidelines to identify HF patients (all EFs) in t
 -   Age: $\geq$ 18, if used age cut off at 30 as had been previously discussed just indicate that
 -   Presence of ICD-10 Codes: 2 outpatient encounters or 1 inpatient (for list of codes see below)
 
-Please don't use any additional filtering criteria. If you are using any (e.g. BNP cut off value) please indicate that in your response to the DTC.
+Please do not use any additional filtering criteria. If you are using any (e.g., BNP cut off value) please indicate that in your response to the DTC.
 
 #### ICD-10 Codes
 
@@ -41,96 +30,161 @@ I50.89,  I50.9
 
 Patients in the HF arms of the HeartShare Study, both the HeartShare HF Registry and the HFpEF Deep Phenotyping Cohorts, are also to be included as they enroll in the study and provide informed consent and EHR authorization via the Eureka app.
 
-## Table or Result Specs
+## OMOP Tables Usage
 
-For the included cohorts, this data call shall include the following tables. All of the table are congruent with **OMOP CDM v.5.3.1**. Unless otherwise specified, we will follow the field requirements (required vs optional) used in the *All of Us* Research Program. A link to the corresponding table definitions in the OMOP CDM and All of Us online resources is provided in each section.
+```{r, colorize, echo=FALSE}
+colorize <- function(x, color) {
+  if (knitr::is_latex_output()) {
+    sprintf("\\textcolor{%s}{%s}", color, x)
+  } else if (knitr::is_html_output()) {
+    sprintf("<span style='color: %s;'>%s</span>", color,
+      x)
+  } else x
+}
+```
 
-If we cannot secure Data Transfer Agreements for transfer of these data, then the default expectation is that the tables will remain within your institutional boundary. They will need to be amenable to standard analysis scripts which will be provided to your site to run against these well-formed tables.
+All the tables are congruent with [**OMOP CDM v.5.3.1**](https://ohdsi.github.io/CommonDataModel/cdm53.html). Required tables are expected to be populated with the data and are listed in **`r colorize("bold letters", "black")`**. Optional tables can be left empty for now are listed in `r colorize("gray", "gray")`. A link to the corresponding table definitions in the OMOP CDM is provided for each table.
 
-### PERSON
+If possible, we ask that patient data for the tables are populated starting 10 years prior to the date patient qualified for the cohort (selection criteria looks in the EHR records starting with year 2016; If patient qualified in 2020, cohort should include patients' data from 2010 onwards).
 
-This is the master table containing 1 row per patient with basic demographics. It should not contain any personally identifiable information. Use any id numbering scheme that is convenient for you for the `person_id` field. 
+We anticipate managing HeartShare cohorts by using OMOP CDM COHORT% tables. More information will follow.
 
-**Note**: Since there is no pooling of the data at this point from different sites, we are deferring on providing central guidance on the the following two question at this time. Feel free to implement any approach that works for your center 1) How to to determine whether a given person's record belongs to the `Historical HF Patients at CC` and/or the `HF Patients Prospectively Enrolled in the HeartShare Study` cohort; 2) How will global ids be assigned in pooled datasets to avoid collision between different centers.
+### Clinical Data Tables
 
-OMOP Definitions: 
+[https://ohdsi.github.io/CommonDataModel/cdm53.html#Clinical_Data_Tables](https://ohdsi.github.io/CommonDataModel/cdm53.html#Clinical_Data_Tables)
 
-[https://ohdsi.github.io/CommonDataModel/cdm53.html#PERSON](https://ohdsi.github.io/CommonDataModel/cdm53.html#PERSON)
+-   [**`r colorize("PERSON","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#PERSON)
 
-*All of Us* Research Program Notes: 
+-   [**`r colorize("OBSERVATION\\_PERIOD","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#OBSERVATION_PERIOD)
 
-[https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012365502-Person](https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012365502-Person)
+-   [**`r colorize("VISIT\\_OCCURENCE","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_OCCURRENCE)
 
-### VISIT_OCCURENCE and VISIT_DETAIL
+-   [`r colorize("VISIT\\_DETAIL","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_DETAIL)
 
-The `VISIT_OCCURENCE` table references the encouters listed in the EHR for that patient. The `VISIT_DETAIL` is an optional table used to represents details of each record in the parent `VISIT_OCCURRENCE` table
+-   [**`r colorize("CONDITION\\_OCCURRENCE","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONDITION_OCCURRENCE)
 
-OMOP Definitions: 
+-   [**`r colorize("DRUG\\_EXPOSURE","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_EXPOSURE)
 
-[https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_OCCURRENCE](https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_OCCURRENCE)
+    - If possible, we recommend loading all of the medication data. For sites	that are building de novo OMOP tables, selective loading should focus on cardiovascular drugs that fall under the following ATC classes: alimentary tract and metabolism, blood and blood forming organs, and cardiovascular systems.
 
-[https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_DETAIL](https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_DETAIL)
+-   [**`r colorize("PROCEDURE\\_OCCURRENCE","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#PROCEDURE_OCCURRENCE)
 
-*All of Us* Research Program Notes: 
+    - If possible, we recommend loading all procedures. In particular, we would like sites to confirm the loading  of [these procedures](https://athena.ohdsi.org/search-terms/terms/45888880).
 
-[https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012365522-Visit-occurrence](https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012365522-Visit-occurrence)
+-   [`r colorize("DEVICE\\_EXPOSURE","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#DEVICE_EXPOSURE)
 
-[https://aou-ehr-ops.zendesk.com/hc/en-us/articles/4405827156371-Visit-detail](https://aou-ehr-ops.zendesk.com/hc/en-us/articles/4405827156371-Visit-detail)
+-   [**`r colorize("MEASUREMENT","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#MEASUREMENT)
+
+    - If possible, we recommend loading all of measurement data, including vitals. For sites that are building de novo OMOP tables, lists of high value labs and vitals will be forthcoming for selective loading.
+
+    - See details for loading echocardiogram data below.
+
+-   [**`r colorize("OBSERVATION","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#OBSERVATION)
+
+-   [**`r colorize("DEATH","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#DEATH)
+
+-   [**`r colorize("NOTE","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#NOTE)
+
+    - We recommend loading notes for echocardiogram, cardiac cath, and ECG if possible. Our initial priority will be loading echo notes locally. At Northwestern, we have used both an internally-developed text de-identification tool as well as an open source tool from Stanford called [TiDE](https://starr.stanford.edu/methods/tide-text-deid).
+
+-   [`r colorize("NOTE\\_NLP","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#NOTE_NLP)
+
+-   [`r colorize("SPECIMEN","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#SPECIMEN)
+
+-   [`r colorize("FACT\\_RELATIONSHIP", "gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#FACT_RELATIONSHIP)
+
+### Health System Data Tables
+
+[https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables](https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables) 
+
+-   [`r colorize("LOCATION","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables)
+
+-   [`r colorize("CARE\\_SITE","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#CARE_SITE)
+
+-   [`r colorize("PROVIDER","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#PROVIDER)
+
+### Health Economics Data Tables
+
+[https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_Economics_Data_Tables](https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_Economics_Data_Tables) 
+
+-   [`r colorize("PAYER\\_PLAN\\_PERIOD","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#PAYER_PLAN_PERIOD)
+
+-   [`r colorize("COST","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#COST)
+
+### Standardized Derived Elements
+
+[https://ohdsi.github.io/CommonDataModel/cdm53.html#Standardized_Derived_Elements](https://ohdsi.github.io/CommonDataModel/cdm53.html#Standardized_Derived_Elements) 
+
+-   [**`r colorize("DRUG\\_ERA","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_ERA)
+
+-   [`r colorize("DOSE\\_ERA","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#DOSE_ERA)
+
+-   [**`r colorize("CONDITION\\_ERA","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONDITION_ERA)
+
+### Vocabulary Tables
+
+[https://ohdsi.github.io/CommonDataModel/cdm53.html#Vocabulary_Tables](https://ohdsi.github.io/CommonDataModel/cdm53.html#Vocabulary_Tables) 
+
+-   [**`r colorize("CONCEPT","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT)
+
+-   [**`r colorize("VOCABULARY","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#VOCABULARY)
+
+-   [**`r colorize("DOMAIN","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#DOMAIN)
+
+-   [**`r colorize("CONCEPT\\_CLASS","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_CLASS)
+
+-   [**`r colorize("CONCEPT\\_RELATIONSHIP", "black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_RELATIONSHIP)
+
+-   [**`r colorize("RELATIONSHIP","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#RELATIONSHIP)
+
+-   [**`r colorize("CONCEPT\\_SYNONYM","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_SYNONYM)
+
+-   [**`r colorize("CONCEPT\\_ANCESTOR","black")`**](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_ANCESTOR)
+
+-   [`r colorize("SOURCE\\_TO\\_CONCEPT\\_MAP","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#SOURCE_TO_CONCEPT_MAP)
+
+-   [`r colorize("DRUG\\_STRENGTH","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_STRENGTH)
+
+-   [`r colorize("COHORT\\_DEFINITION","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#COHORT_DEFINITION)
+
+-   [`r colorize("ATTRIBUTE\\_DEFINITION","gray")`](https://ohdsi.github.io/CommonDataModel/cdm53.html#ATTRIBUTE_DEFINITION)
 
 
-### CONDITION_OCCURENCE
+### Vocabularies to Load
 
-This table lists the conditions associated with that patient. Note that it is possible to link those conditions to the encounters during which they were assigned. This link is optional but would be helpful if included. In this data call, we would expect that the ICD-10 selection criteria listed above to be included as the cohorts themselves are defined based on the presence of these codes.
+Vocabularies can be downloaded from [https://athena.ohdsi.org/vocabulary/list](https://athena.ohdsi.org/vocabulary/list).
+Size of OMOP vocabularies is typically in the range of ~20GB. At a minimum, it is recommended to use the vocabularies below:
 
-OMOP Definitions: 
+ID (CDM V4.5)|CODE (CDM V5)|NAME|LATEST UPDATE
+---|---|---|---
+1|SNOMED|Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)|27-Jan-22
+2|ICD9CM|International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 1 and 2 (NCHS)|30-Sep-14
+3|ICD9Proc|International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 3 (NCHS)|30-Sep-14
+4|CPT4|Current Procedural Terminology version 4 (AMA)|30-Apr-23
+5|HCPCS|Healthcare Common Procedure Coding System (CMS)|30-Jun-23
+6|LOINC|Logical Observation Identifiers Names and Codes (Regenstrief Institute)|14-Aug-23
+8|RxNorm|RxNorm (NLM)|2-Jul-23
+9|NDC|National Drug Code (FDA and manufacturers)|26-Aug-23
+12|Gender|OMOP Gender|
+13|Race|Race and Ethnicity Code Set (USBC)|
+14|CMS Place of Service|Place of Service Codes for Professional Claims (CMS)|
+21|ATC|WHO Anatomic Therapeutic Chemical Classification|6-Sep-21
+35|ICD10PCS|ICD-10 Procedure Coding System (CMS)|30-Sep-20
+40|DRG|Diagnosis-related group (CMS)|
+41|MDC|Major Diagnostic Categories (CMS)|
+44|Ethnicity|OMOP Ethnicity|
+70|ICD10CM|International Classification of Diseases, Tenth Revision, Clinical Modification (NCHS)|30-Sep-22
+82|RxNorm Extension|OMOP RxNorm Extension|23-Aug-23
+88|CVX|CDC Vaccine Administered CVX (NCIRD)|17-Apr-23
+115|Provider|OMOP Provider|
+128|OMOP Extension|OMOP Extension (OHDSI)|30-May-23
 
-[https://ohdsi.github.io/CommonDataModel/cdm53.html#CONDITION_OCCURRENCE](https://ohdsi.github.io/CommonDataModel/cdm53.html#CONDITION_OCCURRENCE)
+### Echo Measurement
 
-*All of Us* Research Program Notes: 
+Echo measurements should be loaded into the MEASUREMENT table. Most of the echo variables could be matched to appropriate LOINC code(s). For variables where suitable standard codes were not found, custom vocabulary and custom concept mappings were created for capturing those values.The echo measurements should be able to be linked to echos in the PROCEDURE_OCCURRENCE table. For left ventricular ejection fraction, we recommend mapping the value in the echo reported by the echocardiographer to the most appropriate LOINC code. If the method of measurement is unknown, then use LOINC Code 8806-2, Left ventricular Ejection fraction by 2D echo.
 
-[https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012797982-Condition-occurrence](https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012797982-Condition-occurrence)
+[Echo Variables Mappings](https://heartsharestudy.github.io/PHENOTYPES/Echo Variables Mapping.html)
 
-### MEASUREMENT (LVEF ONLY)
+[Echo Variables Custom Vocabulary](https://heartsharestudy.github.io/PHENOTYPES/HeartShare Vocabulary.html)
 
-The Measurement Domain is the domain in OMOP concerned with examination or testing of a Person or Person's sample. **For this data call we are only asking to include measurement records pertaining to LV Ejection Fraction**.
-
-**NOTE**: Please note similar to *AoU*, we are requires standard LOINC concepts for the measurement table. Namely only LVEF measurements that map to the following LOINC codes.
-
-LOINC_NUM|LONG_COMMON_NAME
----|---
-10230-1|Left ventricular Ejection fraction
-8806-2|Left ventricular Ejection fraction by 2D echo
-8807-0|Left ventricular Ejection fraction by 2D echo.visual estimate
-8808-8|Left ventricular Ejection fraction by Cardiac angiogram
-8809-6|Left ventricular Ejection fraction by Cardiac angiogram.visual estimate
-8810-4|Left ventricular Ejection fraction by Spiral CT
-8811-2|Left ventricular Ejection fraction by MR
-8812-0|Left ventricular Ejection fraction by Nuclear blood pool
-18043-0|Left ventricular Ejection fraction by US
-93644-3|Left ventricular Ejection fraction by US.2D.A2C+Calc by single plane area-length method
-79992-4|Left ventricular Ejection fraction by US.2D.A2C+Calculated by single plane method of disks
-93645-0|Left ventricular Ejection fraction by US.2D.A4C+Calc by single plane area-length method
-79993-2|Left ventricular Ejection fraction by US.2D.A4C+Calculated by single plane method of disks
-18046-3|Left ventricular Ejection fraction by US 2D modified
-18047-1|Left ventricular Ejection fraction by US 2D modified biplane
-18048-9|Left ventricular Ejection fraction by US 2D modified single-plane
-93646-8|Left ventricular Ejection fraction by US.2D+Calculated by biplane area-length method
-18045-5|Left ventricular Ejection fraction by US.2D+Calculated by biplane ellipse method
-79991-6|Left ventricular Ejection fraction by US.2D+Calculated by biplane method of disks
-77890-2|Left ventricular Ejection fraction by US.2D+Calculated by cube method
-77892-8|Left ventricular Ejection fraction by US.2D+Calculated by modified Simpson method
-18044-8|Left ventricular Ejection fraction by US.2D+Calculated by single-plane ellipse method
-77891-0|Left ventricular Ejection fraction by US.2D+Calculated by Teichholz method
-79990-8|Left ventricular Ejection fraction by US.3D.segmentation
-77889-4|Left ventricular Ejection fraction by US.M-mode+Calculated by cube method
-18049-7|Left ventricular Ejection fraction by US.M-mode+Calculated by Teichholz method
-
-
-OMOP Definitions: 
-
-[https://ohdsi.github.io/CommonDataModel/cdm53.html#MEASUREMENT](https://ohdsi.github.io/CommonDataModel/cdm53.html#MEASUREMENT)
-
-*All of Us* Research Program Notes: 
-
-[https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012461201-Measurement](https://aou-ehr-ops.zendesk.com/hc/en-us/articles/1500012461201-Measurement)
 

@@ -2,16 +2,16 @@
 title: "HeartShare EHR Integration Manual"
 author: "HeartShare Data Portal and EHR Integration Working Group"
 date: "`r Sys.Date()`"
-site: bookdown::bookdown_site
+<!-- output: word_document -->
 documentclass: book
-classoption:
-  - openany
+classoption: openany
 geometry: margin=1in
-description: "Documentation of EHR data integration specifications"
+description: Documentation of EHR data integration specifications
+site: bookdown::bookdown_site
 ---
 
 # About this Document {-}
 
 This document is intended to be the current documentation of specifications pertinent to clinical data integration across the HeartShare study. The most recent version will be available on github at ([github.com/HeartShareStudy/PHENOTYPES](https://github.com/HeartShareStudy/PHENOTYPES)). The best way to pose questions and suggestions about the format of this document, its content, or the process surrounding its maintenance, please start an issue on: ([github.com/HeartShareStudy/PHENOTYPES/issues](https://github.com/HeartShareStudy/PHENOTYPES/issues)). This will start a threaded public conversation in which others can participate and it will also note when the issue is resolved in future updates.
 
-CURRENT VERSION: NEW RELEASE v1.0.20221226
+CURRENT VERSION: NEW RELEASE v1.0.`r format(Sys.Date(),format = "%Y%m%d")`.
