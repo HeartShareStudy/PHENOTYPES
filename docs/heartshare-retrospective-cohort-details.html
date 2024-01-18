@@ -23,7 +23,7 @@
 <meta name="author" content="HeartShare Data Portal and EHR Integration Working Group" />
 
 
-<meta name="date" content="2023-10-13" />
+<meta name="date" content="2024-01-18" />
 
   <meta name="viewport" content="width=device-width, initial-scale=1" />
   <meta name="apple-mobile-web-app-capable" content="yes" />
@@ -54,6 +54,70 @@
 <script src="libs/anchor-sections-1.1.0/anchor-sections.js"></script>
 
 
+<style type="text/css">
+pre > code.sourceCode { white-space: pre; position: relative; }
+pre > code.sourceCode > span { display: inline-block; line-height: 1.25; }
+pre > code.sourceCode > span:empty { height: 1.2em; }
+.sourceCode { overflow: visible; }
+code.sourceCode > span { color: inherit; text-decoration: inherit; }
+pre.sourceCode { margin: 0; }
+@media screen {
+div.sourceCode { overflow: auto; }
+}
+@media print {
+pre > code.sourceCode { white-space: pre-wrap; }
+pre > code.sourceCode > span { text-indent: -5em; padding-left: 5em; }
+}
+pre.numberSource code
+  { counter-reset: source-line 0; }
+pre.numberSource code > span
+  { position: relative; left: -4em; counter-increment: source-line; }
+pre.numberSource code > span > a:first-child::before
+  { content: counter(source-line);
+    position: relative; left: -1em; text-align: right; vertical-align: baseline;
+    border: none; display: inline-block;
+    -webkit-touch-callout: none; -webkit-user-select: none;
+    -khtml-user-select: none; -moz-user-select: none;
+    -ms-user-select: none; user-select: none;
+    padding: 0 4px; width: 4em;
+    color: #aaaaaa;
+  }
+pre.numberSource { margin-left: 3em; border-left: 1px solid #aaaaaa;  padding-left: 4px; }
+div.sourceCode
+  {   }
+@media screen {
+pre > code.sourceCode > span > a:first-child::before { text-decoration: underline; }
+}
+code span.al { color: #ff0000; font-weight: bold; } /* Alert */
+code span.an { color: #60a0b0; font-weight: bold; font-style: italic; } /* Annotation */
+code span.at { color: #7d9029; } /* Attribute */
+code span.bn { color: #40a070; } /* BaseN */
+code span.bu { color: #008000; } /* BuiltIn */
+code span.cf { color: #007020; font-weight: bold; } /* ControlFlow */
+code span.ch { color: #4070a0; } /* Char */
+code span.cn { color: #880000; } /* Constant */
+code span.co { color: #60a0b0; font-style: italic; } /* Comment */
+code span.cv { color: #60a0b0; font-weight: bold; font-style: italic; } /* CommentVar */
+code span.do { color: #ba2121; font-style: italic; } /* Documentation */
+code span.dt { color: #902000; } /* DataType */
+code span.dv { color: #40a070; } /* DecVal */
+code span.er { color: #ff0000; font-weight: bold; } /* Error */
+code span.ex { } /* Extension */
+code span.fl { color: #40a070; } /* Float */
+code span.fu { color: #06287e; } /* Function */
+code span.im { color: #008000; font-weight: bold; } /* Import */
+code span.in { color: #60a0b0; font-weight: bold; font-style: italic; } /* Information */
+code span.kw { color: #007020; font-weight: bold; } /* Keyword */
+code span.op { color: #666666; } /* Operator */
+code span.ot { color: #007020; } /* Other */
+code span.pp { color: #bc7a00; } /* Preprocessor */
+code span.sc { color: #4070a0; } /* SpecialChar */
+code span.ss { color: #bb6688; } /* SpecialString */
+code span.st { color: #4070a0; } /* String */
+code span.va { color: #19177c; } /* Variable */
+code span.vs { color: #4070a0; } /* VerbatimString */
+code span.wa { color: #60a0b0; font-weight: bold; font-style: italic; } /* Warning */
+</style>
 
 <style type="text/css">
   
@@ -100,12 +164,12 @@
 <li class="chapter" data-level="2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#omop-tables-usage"><i class="fa fa-check"></i><b>2.2</b> OMOP Tables Usage</a>
 <ul>
 <li class="chapter" data-level="2.2.1" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#clinical-data-tables"><i class="fa fa-check"></i><b>2.2.1</b> Clinical Data Tables</a></li>
-<li class="chapter" data-level="2.2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-system-data-tables"><i class="fa fa-check"></i><b>2.2.2</b> Health System Data Tables</a></li>
+<li class="chapter" data-level="2.2.2" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#location"><i class="fa fa-check"></i><b>2.2.2</b> Health System Data Tables</a></li>
 <li class="chapter" data-level="2.2.3" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#health-economics-data-tables"><i class="fa fa-check"></i><b>2.2.3</b> Health Economics Data Tables</a></li>
 <li class="chapter" data-level="2.2.4" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#standardized-derived-elements"><i class="fa fa-check"></i><b>2.2.4</b> Standardized Derived Elements</a></li>
 <li class="chapter" data-level="2.2.5" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabulary-tables"><i class="fa fa-check"></i><b>2.2.5</b> Vocabulary Tables</a></li>
 <li class="chapter" data-level="2.2.6" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#vocabularies-to-load"><i class="fa fa-check"></i><b>2.2.6</b> Vocabularies to Load</a></li>
-<li class="chapter" data-level="2.2.7" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#echo-measurement"><i class="fa fa-check"></i><b>2.2.7</b> Echo Measurement</a></li>
+<li class="chapter" data-level="2.2.7" data-path="heartshare-retrospective-cohort-details.html"><a href="heartshare-retrospective-cohort-details.html#echo"><i class="fa fa-check"></i><b>2.2.7</b> Echo Measurement</a></li>
 </ul></li>
 </ul></li>
 <li class="part"><span><b>Previous Data Calls</b></span></li>
@@ -171,29 +235,1047 @@ I50.89,  I50.9</code></pre>
 <h2><span class="header-section-number">2.2</span> OMOP Tables Usage<a href="heartshare-retrospective-cohort-details.html#omop-tables-usage" class="anchor-section" aria-label="Anchor link to header"></a></h2>
 <p>All the tables are congruent with <a href="https://ohdsi.github.io/CommonDataModel/cdm53.html"><strong>OMOP CDM v.5.3.1</strong></a>. Required tables are expected to be populated with the data and are listed in <strong><span style="color: black;">bold letters</span></strong>. Optional tables can be left empty for now are listed in <span style="color: gray;">gray</span>. A link to the corresponding table definitions in the OMOP CDM is provided for each table.</p>
 <p>If possible, we ask that patient data for the tables are populated starting 10 years prior to the date patient qualified for the cohort (selection criteria looks in the EHR records starting with year 2016; If patient qualified in 2020, cohort should include patients’ data from 2010 onwards).</p>
-<p>We anticipate managing HeartShare cohorts by using OMOP CDM COHORT% tables. More information will follow.</p>
 <div id="clinical-data-tables" class="section level3 hasAnchor" number="2.2.1">
 <h3><span class="header-section-number">2.2.1</span> Clinical Data Tables<a href="heartshare-retrospective-cohort-details.html#clinical-data-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Clinical_Data_Tables">https://ohdsi.github.io/CommonDataModel/cdm53.html#Clinical_Data_Tables</a></p>
 <ul>
-<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PERSON"><strong><span style="color: black;">PERSON</span></strong></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PERSON"><strong><span style="color: black;">PERSON</span></strong></a></p>
+<ul>
+<li>We’ll be collecting patient’s 5-digit address zip codes only. Patient’s most recent address should be stored in PERSON table, in <em>location_id</em> field. More information is provided later, under <a href="heartshare-retrospective-cohort-details.html#location">LOCATION table</a></li>
+</ul></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#OBSERVATION_PERIOD"><strong><span style="color: black;">OBSERVATION_PERIOD</span></strong></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_OCCURRENCE"><strong><span style="color: black;">VISIT_OCCURENCE</span></strong></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#VISIT_DETAIL"><span style="color: gray;">VISIT_DETAIL</span></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONDITION_OCCURRENCE"><strong><span style="color: black;">CONDITION_OCCURRENCE</span></strong></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_EXPOSURE"><strong><span style="color: black;">DRUG_EXPOSURE</span></strong></a></p>
 <ul>
-<li>If possible, we recommend loading all of the medication data. For sites that are building de novo OMOP tables, selective loading should focus on cardiovascular drugs that fall under the following ATC classes: alimentary tract and metabolism, blood and blood forming organs, and cardiovascular systems.</li>
-</ul></li>
+<li>If possible, we recommend loading all of the medication data. For sites that are building de novo OMOP tables, selective loading should focus on cardiovascular drugs that fall under the following ATC classes: alimentary tract and metabolism, blood and blood forming organs, and cardiovascular systems. Since the list of rxnorm codes is a long one, provided below is sql code, to run against OMOP vocabulary tables. The code returns rxnorm codes that belong to ATC (sub)class specified in the variable <code>@ATC_code</code> (in the example, all rxnorm codes for ATC class <strong>A10</strong> - Drugs used in Diabetes will be returned)</li>
+</ul>
+<div class="sourceCode" id="cb2"><pre class="sourceCode r"><code class="sourceCode r"><span id="cb2-1"><a href="heartshare-retrospective-cohort-details.html#cb2-1" tabindex="-1"></a><span class="sc">--</span> Returns RxNorm codes <span class="cf">for</span> selected ATC class</span>
+<span id="cb2-2"><a href="heartshare-retrospective-cohort-details.html#cb2-2" tabindex="-1"></a>DECLARE <span class="sc">@</span>ATC_code AS <span class="fu">varchar</span>(<span class="dv">10</span>);</span>
+<span id="cb2-3"><a href="heartshare-retrospective-cohort-details.html#cb2-3" tabindex="-1"></a>SET  <span class="sc">@</span>ATC_code <span class="ot">=</span> <span class="st">&#39;A10&#39;</span></span>
+<span id="cb2-4"><a href="heartshare-retrospective-cohort-details.html#cb2-4" tabindex="-1"></a></span>
+<span id="cb2-5"><a href="heartshare-retrospective-cohort-details.html#cb2-5" tabindex="-1"></a>;with t <span class="fu">as</span> (</span>
+<span id="cb2-6"><a href="heartshare-retrospective-cohort-details.html#cb2-6" tabindex="-1"></a>        select concept_code, concept_name </span>
+<span id="cb2-7"><a href="heartshare-retrospective-cohort-details.html#cb2-7" tabindex="-1"></a>            from [cdm].[concept] </span>
+<span id="cb2-8"><a href="heartshare-retrospective-cohort-details.html#cb2-8" tabindex="-1"></a>            where vocabulary_id <span class="cf">in</span> (<span class="st">&#39;ATC&#39;</span>) and concept_code like <span class="sc">@</span>ATC_code<span class="sc">+</span><span class="st">&#39;%&#39;</span></span>
+<span id="cb2-9"><a href="heartshare-retrospective-cohort-details.html#cb2-9" tabindex="-1"></a>       )</span>
+<span id="cb2-10"><a href="heartshare-retrospective-cohort-details.html#cb2-10" tabindex="-1"></a></span>
+<span id="cb2-11"><a href="heartshare-retrospective-cohort-details.html#cb2-11" tabindex="-1"></a>, atc <span class="fu">as</span>   (</span>
+<span id="cb2-12"><a href="heartshare-retrospective-cohort-details.html#cb2-12" tabindex="-1"></a>        select c.concept_code,c.concept_id,</span>
+<span id="cb2-13"><a href="heartshare-retrospective-cohort-details.html#cb2-13" tabindex="-1"></a>            <span class="fu">left</span>(c.concept_code,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">1</span> then <span class="dv">1</span> end)</span>
+<span id="cb2-14"><a href="heartshare-retrospective-cohort-details.html#cb2-14" tabindex="-1"></a>            [ATC 1st_code]</span>
+<span id="cb2-15"><a href="heartshare-retrospective-cohort-details.html#cb2-15" tabindex="-1"></a>            ,t1.concept_name [ATC 1st_name],</span>
+<span id="cb2-16"><a href="heartshare-retrospective-cohort-details.html#cb2-16" tabindex="-1"></a>            <span class="fu">left</span>(c.concept_code,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">3</span> then <span class="dv">3</span> end)</span>
+<span id="cb2-17"><a href="heartshare-retrospective-cohort-details.html#cb2-17" tabindex="-1"></a>            [ATC 2st_code]</span>
+<span id="cb2-18"><a href="heartshare-retrospective-cohort-details.html#cb2-18" tabindex="-1"></a>            ,t2.concept_name [ATC 2st_name],</span>
+<span id="cb2-19"><a href="heartshare-retrospective-cohort-details.html#cb2-19" tabindex="-1"></a>            <span class="fu">left</span>(c.concept_code,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">4</span> then <span class="dv">4</span> end)</span>
+<span id="cb2-20"><a href="heartshare-retrospective-cohort-details.html#cb2-20" tabindex="-1"></a>            [ATC 3st_code]</span>
+<span id="cb2-21"><a href="heartshare-retrospective-cohort-details.html#cb2-21" tabindex="-1"></a>            ,t3.concept_name [ATC 3st_name],</span>
+<span id="cb2-22"><a href="heartshare-retrospective-cohort-details.html#cb2-22" tabindex="-1"></a>            <span class="fu">left</span>(c.concept_code,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">5</span> then <span class="dv">5</span> end)</span>
+<span id="cb2-23"><a href="heartshare-retrospective-cohort-details.html#cb2-23" tabindex="-1"></a>            [ATC 4st_code]</span>
+<span id="cb2-24"><a href="heartshare-retrospective-cohort-details.html#cb2-24" tabindex="-1"></a>            ,t4.concept_name [ATC 4st_name],</span>
+<span id="cb2-25"><a href="heartshare-retrospective-cohort-details.html#cb2-25" tabindex="-1"></a>            <span class="fu">left</span>(c.concept_code,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">7</span> then <span class="dv">7</span> end)</span>
+<span id="cb2-26"><a href="heartshare-retrospective-cohort-details.html#cb2-26" tabindex="-1"></a>            [ATC 5st_code]</span>
+<span id="cb2-27"><a href="heartshare-retrospective-cohort-details.html#cb2-27" tabindex="-1"></a>            ,t5.concept_name [ATC 5st_name]</span>
+<span id="cb2-28"><a href="heartshare-retrospective-cohort-details.html#cb2-28" tabindex="-1"></a>            from [cdm].[concept] c</span>
+<span id="cb2-29"><a href="heartshare-retrospective-cohort-details.html#cb2-29" tabindex="-1"></a>            left join t as t1 on <span class="at">t1.concept_code=</span> <span class="fu">left</span>(c.concept_code</span>
+<span id="cb2-30"><a href="heartshare-retrospective-cohort-details.html#cb2-30" tabindex="-1"></a>            ,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">1</span> then <span class="dv">1</span> end)</span>
+<span id="cb2-31"><a href="heartshare-retrospective-cohort-details.html#cb2-31" tabindex="-1"></a>            left join t as t2 on <span class="at">t2.concept_code=</span><span class="fu">left</span>(c.concept_code</span>
+<span id="cb2-32"><a href="heartshare-retrospective-cohort-details.html#cb2-32" tabindex="-1"></a>            ,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">3</span> then <span class="dv">3</span> end)</span>
+<span id="cb2-33"><a href="heartshare-retrospective-cohort-details.html#cb2-33" tabindex="-1"></a>            left join t as t3 on <span class="at">t3.concept_code=</span><span class="fu">left</span>(c.concept_code</span>
+<span id="cb2-34"><a href="heartshare-retrospective-cohort-details.html#cb2-34" tabindex="-1"></a>            ,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">4</span> then <span class="dv">4</span> end)</span>
+<span id="cb2-35"><a href="heartshare-retrospective-cohort-details.html#cb2-35" tabindex="-1"></a>            left join t as t4 on <span class="at">t4.concept_code=</span><span class="fu">left</span>(c.concept_code</span>
+<span id="cb2-36"><a href="heartshare-retrospective-cohort-details.html#cb2-36" tabindex="-1"></a>            ,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">5</span> then <span class="dv">5</span> end)</span>
+<span id="cb2-37"><a href="heartshare-retrospective-cohort-details.html#cb2-37" tabindex="-1"></a>            left join t as t5 on <span class="at">t5.concept_code=</span><span class="fu">left</span>(c.concept_code</span>
+<span id="cb2-38"><a href="heartshare-retrospective-cohort-details.html#cb2-38" tabindex="-1"></a>            ,case when <span class="fu">len</span>(c.concept_code)<span class="sc">&gt;=</span><span class="dv">7</span> then <span class="dv">7</span> end)</span>
+<span id="cb2-39"><a href="heartshare-retrospective-cohort-details.html#cb2-39" tabindex="-1"></a>            where</span>
+<span id="cb2-40"><a href="heartshare-retrospective-cohort-details.html#cb2-40" tabindex="-1"></a>                 c.vocabulary_id <span class="cf">in</span> (<span class="st">&#39;ATC&#39;</span>) </span>
+<span id="cb2-41"><a href="heartshare-retrospective-cohort-details.html#cb2-41" tabindex="-1"></a>                 and t5.concept_name is not null</span>
+<span id="cb2-42"><a href="heartshare-retrospective-cohort-details.html#cb2-42" tabindex="-1"></a>                 and c.concept_code like <span class="sc">@</span>ATC_code<span class="sc">+</span><span class="st">&#39;%&#39;</span></span>
+<span id="cb2-43"><a href="heartshare-retrospective-cohort-details.html#cb2-43" tabindex="-1"></a>           )</span>
+<span id="cb2-44"><a href="heartshare-retrospective-cohort-details.html#cb2-44" tabindex="-1"></a> select [ATC 1st_code]<span class="sc">+</span><span class="fu">isnull</span>(<span class="st">&#39;-&#39;</span><span class="sc">+</span>[ATC 1st_name],<span class="st">&#39;&#39;</span>) ATC_1,</span>
+<span id="cb2-45"><a href="heartshare-retrospective-cohort-details.html#cb2-45" tabindex="-1"></a>            [ATC 2st_code]<span class="sc">+</span><span class="fu">isnull</span>(<span class="st">&#39;-&#39;</span><span class="sc">+</span>[ATC 2st_name],<span class="st">&#39;&#39;</span>) ATC_2,</span>
+<span id="cb2-46"><a href="heartshare-retrospective-cohort-details.html#cb2-46" tabindex="-1"></a>            [ATC 3st_code]<span class="sc">+</span><span class="fu">isnull</span>(<span class="st">&#39;-&#39;</span><span class="sc">+</span>[ATC 3st_name],<span class="st">&#39;&#39;</span>) ATC_3,</span>
+<span id="cb2-47"><a href="heartshare-retrospective-cohort-details.html#cb2-47" tabindex="-1"></a>            [ATC 4st_code]<span class="sc">+</span><span class="fu">isnull</span>(<span class="st">&#39;-&#39;</span><span class="sc">+</span>[ATC 4st_name],<span class="st">&#39;&#39;</span>) ATC_4,</span>
+<span id="cb2-48"><a href="heartshare-retrospective-cohort-details.html#cb2-48" tabindex="-1"></a>            [ATC 5st_code]<span class="sc">+</span><span class="fu">isnull</span>(<span class="st">&#39;-&#39;</span><span class="sc">+</span>[ATC 5st_name],<span class="st">&#39;&#39;</span>) ATC_5,</span>
+<span id="cb2-49"><a href="heartshare-retrospective-cohort-details.html#cb2-49" tabindex="-1"></a>        c.concept_code RxNorm_code,c.concept_class_id</span>
+<span id="cb2-50"><a href="heartshare-retrospective-cohort-details.html#cb2-50" tabindex="-1"></a>            ,c.standard_concept, c.concept_name RxNorm_desc</span>
+<span id="cb2-51"><a href="heartshare-retrospective-cohort-details.html#cb2-51" tabindex="-1"></a> from atc d </span>
+<span id="cb2-52"><a href="heartshare-retrospective-cohort-details.html#cb2-52" tabindex="-1"></a> join [heartshare_stg].[cdm].[concept_ancestor] a </span>
+<span id="cb2-53"><a href="heartshare-retrospective-cohort-details.html#cb2-53" tabindex="-1"></a>  on  a.ancestor_concept_id<span class="ot">=</span>d.concept_id</span>
+<span id="cb2-54"><a href="heartshare-retrospective-cohort-details.html#cb2-54" tabindex="-1"></a> join [cdm].[concept] c on c.concept_id<span class="ot">=</span>a.[descendant_concept_id]</span>
+<span id="cb2-55"><a href="heartshare-retrospective-cohort-details.html#cb2-55" tabindex="-1"></a> where c.vocabulary_id<span class="ot">=</span><span class="st">&#39;rxnorm&#39;</span></span>
+<span id="cb2-56"><a href="heartshare-retrospective-cohort-details.html#cb2-56" tabindex="-1"></a> order by d.concept_code, a.min_levels_of_separation</span></code></pre></div></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PROCEDURE_OCCURRENCE"><strong><span style="color: black;">PROCEDURE_OCCURRENCE</span></strong></a></p>
 <ul>
-<li>If possible, we recommend loading all procedures. In particular, we would like sites to confirm the loading of <a href="https://athena.ohdsi.org/search-terms/terms/45888880">these procedures</a>.</li>
-</ul></li>
+<li>If possible, we recommend loading all procedures. In particular, we would like sites to confirm the loading of cardiovascular procedures and diagnostic radiology procedures of the heart.</li>
+</ul>
+<table>
+<colgroup>
+<col width="31%" />
+<col width="68%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Procedure Group</th>
+<th align="left">CPT4 Codes</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Cardiac Catheterization Procedures</td>
+<td align="left">93451, 93452, 93453, 93454, 93455, 93456, 93457, 93458, 93459, 93460, 93461, 93462, 93463, 93464, 93503, 93505, 93563, 93564, 93565, 93566, 93567, 93568, 93571, 93572, 93580, 93581, 93582, 93583, 93590, 93591, 93592, 93593, 93594, 93595, 93596, 93597, 93598</td>
+</tr>
+<tr class="even">
+<td align="left">Cardiography Procedures</td>
+<td align="left">93000, 93005, 93010, 93015, 93016, 93017, 93018, 93024, 93025, 93040, 93041, 93042, 93050</td>
+</tr>
+<tr class="odd">
+<td align="left">Cardiovascular Monitoring Services</td>
+<td align="left">93224, 93225, 93226, 93227, 93229, 93241, 93242, 93243, 93244, 93245, 93246, 93247, 93248, 93268, 93270, 93271, 93272, 93278</td>
+</tr>
+<tr class="even">
+<td align="left">Echocardiography Procedures</td>
+<td align="left">93303, 93304, 93306, 93307, 93308, 93312, 93313, 93314, 93315, 93316, 93317, 93318, 93319, 93320, 93321, 93325, 93350, 93351, 93352, 93355, 93356</td>
+</tr>
+<tr class="odd">
+<td align="left">Home and Outpatient International Normalized Ratio</td>
+<td align="left">93792, 93793</td>
+</tr>
+<tr class="even">
+<td align="left">Implantable, Insertable, and Wearable Cardiac Dev</td>
+<td align="left">93260, 93261, 93279, 93280, 93281, 93282, 93283, 93284, 93285, 93286, 93287, 93288, 93289, 93290, 93291, 93292, 93293, 93294, 93295, 93296, 93297, 93298, 93299</td>
+</tr>
+<tr class="odd">
+<td align="left">Intracardiac Electrophysiological Procedures</td>
+<td align="left">93600, 93602, 93603, 93609, 93610, 93612, 93613, 93615, 93616, 93618, 93619, 93620, 93621, 93622, 93623, 93624, 93631, 93640, 93641, 93642, 93644, 93650, 93653, 93654, 93655, 93656, 93657, 93660, 93662</td>
+</tr>
+<tr class="even">
+<td align="left">Noninvasive Physiologic Studies and Procedures</td>
+<td align="left">93701, 93702, 93724, 93740, 93745, 93750, 93770, 93784, 93784, 93786, 93786, 93788, 93788, 93790, 93790</td>
+</tr>
+<tr class="odd">
+<td align="left">Other Cardiovascular Procedures</td>
+<td align="left">93797, 93798, 93799</td>
+</tr>
+<tr class="even">
+<td align="left">Peripheral Arterial Disease Rehabilitation</td>
+<td align="left">93668</td>
+</tr>
+<tr class="odd">
+<td align="left">Therapeutic Cardiovascular Services and Procedures</td>
+<td align="left">92920, 92921, 92924, 92925, 92928, 92929, 92933, 92934, 92937, 92938, 92941, 92943, 92944, 92950, 92953, 92960, 92961, 92970, 92971, 92973, 92974, 92975, 92977, 92978, 92978, 92979, 92979, 92986, 92987, 92990, 92997, 92998, 1012989</td>
+</tr>
+<tr class="even">
+<td align="left">Diagnostic Radiology Procedures of the Heart</td>
+<td align="left">75557, 75559, 75561, 75563, 75565, 75571, 75572, 75573, 75574</td>
+</tr>
+</tbody>
+</table></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DEVICE_EXPOSURE"><span style="color: gray;">DEVICE_EXPOSURE</span></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#MEASUREMENT"><strong><span style="color: black;">MEASUREMENT</span></strong></a></p>
 <ul>
-<li><p>If possible, we recommend loading all of measurement data, including vitals. For sites that are building de novo OMOP tables, lists of high value labs and vitals will be forthcoming for selective loading.</p></li>
-<li><p>See details for loading echocardiogram data below.</p></li>
+<li>If possible, we recommend loading all of measurement data, including vitals. High value labs and vitals are listed in the table.</li>
+</ul>
+<table>
+<colgroup>
+<col width="24%" />
+<col width="62%" />
+<col width="12%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">Lab/Vital</th>
+<th align="left">Description</th>
+<th align="right">LOINC code</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">Sodium</td>
+<td align="left">Sodium [Moles/volume] in Serum or Plasma</td>
+<td align="right">2951-2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Sodium [Moles/volume] in Blood</td>
+<td align="right">2947-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Sodium [Moles/volume] in Arterial blood</td>
+<td align="right">32717-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Sodium [Moles/volume] in Capillary blood</td>
+<td align="right">39792-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Sodium [Moles/volume] in Serum, Plasma or Blood</td>
+<td align="right">77139-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Sodium [Moles/volume] in Mixed venous blood</td>
+<td align="right">41657-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Sodium [Moles/volume] in Venous blood</td>
+<td align="right">39791-9</td>
+</tr>
+<tr class="even">
+<td align="left">Potassium</td>
+<td align="left">Potassium [Moles/volume] in Serum or Plasma</td>
+<td align="right">2823-3</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Potassium [Moles/volume] in Blood</td>
+<td align="right">6298-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Potassium [Moles/volume] in Arterial blood</td>
+<td align="right">32713-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Potassium [Moles/volume] in Capillary blood</td>
+<td align="right">39790-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Potassium [Moles/volume] in Mixed venous blood</td>
+<td align="right">41656-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Potassium [Moles/volume] in Serum, Plasma or Blood</td>
+<td align="right">77142-8</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Potassium [Moles/volume] in Venous blood</td>
+<td align="right">39789-3</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Potassium [Mass/volume] in Blood</td>
+<td align="right">75940-7</td>
+</tr>
+<tr class="even">
+<td align="left">Bicarbonate</td>
+<td align="left">Bicarbonate [Moles/volume] in Blood</td>
+<td align="right">1959-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] in Serum or Plasma</td>
+<td align="right">1963-8</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] in Capillary blood</td>
+<td align="right">1961-2</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] in Central venous blood</td>
+<td align="right">97543-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] in Mixed venous blood</td>
+<td align="right">19229-4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] in Venous blood</td>
+<td align="right">14627-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] standard in Arterial blood</td>
+<td align="right">19230-2</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] in Arterial blood</td>
+<td align="right">1960-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] standard in Capillary blood</td>
+<td align="right">19231-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] standard in Central venous blood</td>
+<td align="right">97544-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] standard in Mixed venous blood</td>
+<td align="right">19233-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] standard in Plasma</td>
+<td align="right">69964-5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Bicarbonate [Moles/volume] standard in Venous blood</td>
+<td align="right">19232-8</td>
+</tr>
+<tr class="odd">
+<td align="left">Blood Urea Nitrogen</td>
+<td align="left">Urea nitrogen [Mass/volume] in Arterial blood</td>
+<td align="right">12961-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Urea nitrogen [Mass/volume] in Peripheral blood</td>
+<td align="right">12963-5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Urea nitrogen [Mass/volume] in Venous blood</td>
+<td align="right">12962-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Urea nitrogen [Mass/volume] in Serum or Plasma</td>
+<td align="right">3094-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Urea nitrogen [Mass/volume] in Blood</td>
+<td align="right">6299-2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Urea nitrogen [Moles/volume] in Serum or Plasma</td>
+<td align="right">14937-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Urea nitrogen [Moles/volume] in Blood</td>
+<td align="right">59570-2</td>
+</tr>
+<tr class="even">
+<td align="left">Creatinine</td>
+<td align="left">Creatinine [Mass/volume] in Serum or Plasma</td>
+<td align="right">2160-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Creatinine [Mass/volume] in Blood</td>
+<td align="right">38483-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Creatinine [Moles/volume] in Serum, Plasma or Blood</td>
+<td align="right">77140-2</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Creatinine [Moles/volume] in Serum or Plasma</td>
+<td align="right">14682-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Creatinine [Moles/volume] in Blood</td>
+<td align="right">59826-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Creatinine [Mass/volume] in Arterial blood</td>
+<td align="right">21232-4</td>
+</tr>
+<tr class="even">
+<td align="left">estimated GFR</td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted among blacks [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)</td>
+<td align="right">88293-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted among non-blacks [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)</td>
+<td align="right">88294-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted among females [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)</td>
+<td align="right">50044-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted among non-blacks [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)</td>
+<td align="right">48642-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (CKD-EPI)</td>
+<td align="right">62238-1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted among blacks [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)</td>
+<td align="right">48643-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)</td>
+<td align="right">77147-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glomerular filtration rate/1.73 sq M.predicted among males [Volume Rate/Area] in Serum, Plasma or Blood by Creatinine-based formula (MDRD)</td>
+<td align="right">70969-1</td>
+</tr>
+<tr class="even">
+<td align="left">Fasting Glucose</td>
+<td align="left">Fasting glucose [Mass/volume] in Capillary blood</td>
+<td align="right">1556-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Fasting glucose [Mass/volume] in Capillary blood by Glucometer</td>
+<td align="right">41604-0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Fasting glucose [Mass/volume] in Serum or Plasma</td>
+<td align="right">1558-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Fasting glucose [Mass/volume] in Venous blood</td>
+<td align="right">1557-8</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Fasting glucose [Moles/volume] in Blood</td>
+<td align="right">76629-5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Fasting glucose [Moles/volume] in Capillary blood by Glucometer</td>
+<td align="right">14770-2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Fasting glucose [Moles/volume] in Serum or Plasma</td>
+<td align="right">14771-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Fasting glucose [Moles/volume] in Serum, Plasma or Blood</td>
+<td align="right">77145-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glucose [Mass/volume] in Serum or Plasma –10 hours fasting</td>
+<td align="right">10450-5</td>
+</tr>
+<tr class="odd">
+<td align="left">Glucose</td>
+<td align="left">Glucose [Mass/volume] in Serum, Plasma or Blood</td>
+<td align="right">74774-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glucose [Moles/volume] in Blood</td>
+<td align="right">15074-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glucose [Moles/volume] in Capillary blood</td>
+<td align="right">51596-5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glucose [Moles/volume] in Serum or Plasma</td>
+<td align="right">14749-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glucose [Moles/volume] in Serum, Plasma or Blood</td>
+<td align="right">77135-2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glucose [Moles/volume] in Venous blood</td>
+<td align="right">39480-9</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glucose [Mass/volume] in Venous blood</td>
+<td align="right">41652-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Glucose [Mass/volume] in Blood</td>
+<td align="right">2339-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Glucose [Mass/volume] in Serum or Plasma</td>
+<td align="right">2345-7</td>
+</tr>
+<tr class="even">
+<td align="left">White Blood Cell count</td>
+<td align="left">Leukocytes [#/volume] in Blood by Automated count</td>
+<td align="right">6690-2</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Leukocytes [#/volume] in Blood by Manual count</td>
+<td align="right">804-5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Leukocytes [#/volume] in Blood</td>
+<td align="right">26464-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Leukocytes [#/volume] in Blood by Estimate</td>
+<td align="right">49498-9</td>
+</tr>
+<tr class="even">
+<td align="left">Hemoglobin</td>
+<td align="left">Hemoglobin [Mass/volume] in Blood</td>
+<td align="right">718-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Venous blood</td>
+<td align="right">30350-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Blood by Oximetry</td>
+<td align="right">55782-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Capillary blood</td>
+<td align="right">30352-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Blood by calculation</td>
+<td align="right">20509-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Capillary blood by Oximetry</td>
+<td align="right">97556-5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Central venous blood by calculation</td>
+<td align="right">97550-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Central venous blood by Oximetry</td>
+<td align="right">97555-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Mixed venous blood</td>
+<td align="right">30351-1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Mixed venous blood by Oximetry</td>
+<td align="right">76768-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Venous blood by Oximetry</td>
+<td align="right">76769-9</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin [Moles/volume] in Arterial blood</td>
+<td align="right">75928-2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin [Moles/volume] in Blood</td>
+<td align="right">59260-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin [Moles/volume] in Venous blood</td>
+<td align="right">93846-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin [Mass/volume] in Arterial blood</td>
+<td align="right">30313-1</td>
+</tr>
+<tr class="odd">
+<td align="left">Hemoglobin A1c</td>
+<td align="left">Hemoglobin A1c/Hemoglobin.total in Blood</td>
+<td align="right">4548-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin A1c/Hemoglobin.total in Blood by JDS/JSCC protocol</td>
+<td align="right">62388-4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Hemoglobin A1c/Hemoglobin.total in Blood by HPLC</td>
+<td align="right">17856-6</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Hemoglobin A1c/Hemoglobin.total in Blood by Electrophoresis</td>
+<td align="right">4549-2</td>
+</tr>
+<tr class="odd">
+<td align="left">Platelets count</td>
+<td align="left">Platelets [#/volume] in Blood by Automated count</td>
+<td align="right">777-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Platelets [#/volume] in Blood by Manual count</td>
+<td align="right">778-1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Platelets [#/volume] in Plasma by Automated count</td>
+<td align="right">13056-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Platelets [#/volume] in Plasma</td>
+<td align="right">26516-5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Platelets [#/volume] in Blood</td>
+<td align="right">26515-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Platelets [#/volume] in Blood by Automated count.optical</td>
+<td align="right">97995-5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Platelets [#/volume] in Blood by Estimate</td>
+<td align="right">49497-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Platelets reticulated [#/volume] in Blood by Automated count</td>
+<td align="right">71692-8</td>
+</tr>
+<tr class="odd">
+<td align="left">Red Cell Distrib. Width</td>
+<td align="left">Erythrocyte distribution width [Ratio] by Automated count</td>
+<td align="right">788-0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Erythrocyte distribution width [Entitic volume]</td>
+<td align="right">30384-2</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Erythrocyte distribution width [Entitic volume] by Automated count</td>
+<td align="right">21000-5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Erythrocyte distribution width [Ratio]</td>
+<td align="right">30385-9</td>
+</tr>
+<tr class="odd">
+<td align="left">BNP</td>
+<td align="left">Natriuretic peptide B [Mass/volume] in Blood</td>
+<td align="right">42637-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Natriuretic peptide B [Mass/volume] in Serum or Plasma</td>
+<td align="right">30934-4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Natriuretic peptide B [Moles/volume] in Serum or Plasma</td>
+<td align="right">47092-2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Natriuretic peptide B [Mass or Moles/volume] in Serum or Plasma</td>
+<td align="right">35257-5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma</td>
+<td align="right">33762-6</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Natriuretic peptide.B prohormone N-Terminal [Moles/volume] in Serum or Plasma</td>
+<td align="right">33763-4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Serum or Plasma by Immunoassay</td>
+<td align="right">83107-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Natriuretic peptide.B prohormone N-Terminal [Moles/volume] in Serum or Plasma by Immunoassay</td>
+<td align="right">83108-1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Natriuretic peptide.B prohormone N-Terminal [Mass/volume] in Blood by Immunoassay</td>
+<td align="right">71425-3</td>
+</tr>
+<tr class="even">
+<td align="left">Cholesterol</td>
+<td align="left">Cholesterol [Mass/volume] in Serum or Plasma</td>
+<td align="right">2093-3</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol [Moles/volume] in Serum or Plasma</td>
+<td align="right">14647-2</td>
+</tr>
+<tr class="even">
+<td align="left">HDL</td>
+<td align="left">Cholesterol in HDL [Mass/volume] in Serum or Plasma</td>
+<td align="right">2085-9</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol in HDL [Mass/volume] in Serum or Plasma by Electrophoresis</td>
+<td align="right">49130-8</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol in HDL [Moles/volume] in Serum or Plasma</td>
+<td align="right">14646-4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol in HDL [Presence] in Serum or Plasma</td>
+<td align="right">27340-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol in HDL [Presence] in Serum or Plasma by Electrophoresis</td>
+<td align="right">12771-2</td>
+</tr>
+<tr class="odd">
+<td align="left">LDL</td>
+<td align="left">Cholesterol in LDL [Mass/volume] in Serum or Plasma</td>
+<td align="right">2089-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Mass/volume] in Serum or Plasma by Calculated by Martin-Hopkins</td>
+<td align="right">96259-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Mass/volume] in Serum or Plasma by calculation</td>
+<td align="right">13457-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Mass/volume] in Serum or Plasma by Direct assay</td>
+<td align="right">18262-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Mass/volume] in Serum or Plasma by Electrophoresis</td>
+<td align="right">49132-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Moles/volume] in Serum or Plasma</td>
+<td align="right">22748-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Moles/volume] in Serum or Plasma by Calculated by Martin-Hopkins</td>
+<td align="right">96258-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Moles/volume] in Serum or Plasma by calculation</td>
+<td align="right">39469-2</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol in LDL [Moles/volume] in Serum or Plasma by Direct assay</td>
+<td align="right">69419-0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol.in LDL (real) [Mass/volume] in Serum or Plasma by VAP</td>
+<td align="right">55440-2</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Cholesterol.in LDL.small dense [Mass/volume] in Serum or Plasma</td>
+<td align="right">90364-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Cholesterol.in LDL.small dense [Moles/volume] in Serum or Plasma</td>
+<td align="right">96959-2</td>
+</tr>
+<tr class="odd">
+<td align="left">Triglyceride</td>
+<td align="left">Triglyceride [Mass/volume] in Blood</td>
+<td align="right">3043-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Triglyceride [Mass/volume] in Serum or Plasma</td>
+<td align="right">2571-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Triglyceride [Mass/volume] in Serum or Plasma –12 hours fasting</td>
+<td align="right">1644-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Triglyceride [Mass/volume] in Serum or Plasma –fasting</td>
+<td align="right">3048-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Triglyceride [Moles/volume] in Blood</td>
+<td align="right">70218-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Triglyceride [Moles/volume] in Serum or Plasma</td>
+<td align="right">14927-8</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Triglyceride [Moles/volume] in Serum or Plasma –12 hours fasting</td>
+<td align="right">30524-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Triglyceride [Moles/volume] in Serum or Plasma –fasting</td>
+<td align="right">47210-0</td>
+</tr>
+<tr class="odd">
+<td align="left">Magnesium</td>
+<td align="left">Magnesium [Mass/volume] in Blood</td>
+<td align="right">21377-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Magnesium [Mass/volume] in Serum or Plasma</td>
+<td align="right">19123-9</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Magnesium [Moles/volume] in Blood</td>
+<td align="right">2593-2</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Magnesium [Moles/volume] in Serum or Plasma</td>
+<td align="right">2601-3</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Magnesium Ionized [Mass/volume] in Serum or Plasma</td>
+<td align="right">32698-3</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Magnesium Ionized [Moles/volume] in Blood by Ion-selective membrane electrode (ISE)</td>
+<td align="right">73572-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Magnesium Ionized [Moles/volume] in Serum or Plasma</td>
+<td align="right">2600-5</td>
+</tr>
+<tr class="even">
+<td align="left">Albumin</td>
+<td align="left">Albumin [Mass/volume] in Serum or Plasma</td>
+<td align="right">1751-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Albumin [Mass/volume] in Serum or Plasma by Electrophoresis</td>
+<td align="right">2862-1</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Albumin [Mass/volume] in Blood by Bromocresol purple (BCP) dye binding method</td>
+<td align="right">76631-1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Albumin [Mass/volume] in Serum or Plasma by Bromocresol green (BCG) dye binding method</td>
+<td align="right">61151-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Albumin [Mass/volume] in Serum or Plasma by Bromocresol purple (BCP) dye binding method</td>
+<td align="right">61152-5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Albumin [Mass/volume] in Serum, Plasma or Blood by Bromocresol purple (BCP) dye binding method</td>
+<td align="right">77148-5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Albumin [Moles/volume] in Serum or Plasma</td>
+<td align="right">54347-0</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Albumin [Moles/volume] in Serum or Plasma by Bromocresol green (BCG) dye binding method</td>
+<td align="right">62235-7</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Albumin [Moles/volume] in Serum or Plasma by Bromocresol purple (BCP) dye binding method</td>
+<td align="right">62234-0</td>
+</tr>
+<tr class="odd">
+<td align="left">Lymphocytes</td>
+<td align="left">Lymphocytes [#/volume] in Blood by Automated count</td>
+<td align="right">731-0</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Lymphocytes [#/volume] in Blood</td>
+<td align="right">26474-7</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Lymphocytes [#/volume] in Blood by Manual count</td>
+<td align="right">732-8</td>
+</tr>
+<tr class="even">
+<td align="left">Uric Acid</td>
+<td align="left">Urate [Mass/volume] in Serum or Plasma</td>
+<td align="right">3084-1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Urate [Moles/volume] in Serum or Plasma</td>
+<td align="right">14933-6</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Urate [Mass/volume] in Blood</td>
+<td align="right">98981-4</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Urate [Moles/volume] in Urine</td>
+<td align="right">14934-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Urate [Mass/volume] in Urine</td>
+<td align="right">3086-6</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Urate [Mass/volume] in 2 hour Urine</td>
+<td align="right">57386-5</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Urate [Mass/volume] in 12 hour Urine</td>
+<td align="right">57332-9</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Urate [Moles/volume] in 24 hour Urine</td>
+<td align="right">25997-8</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Urate [Mass/volume] in 24 hour Urine</td>
+<td align="right">21587-1</td>
+</tr>
+<tr class="odd">
+<td align="left">Body-mass index</td>
+<td align="left">Body mass index (BMI) [Percentile]</td>
+<td align="right">59574-4</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Body mass index (BMI) [Percentile] Per age</td>
+<td align="right">59575-1</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Body mass index (BMI) [Percentile] Per age and sex</td>
+<td align="right">59576-9</td>
+</tr>
+<tr class="even">
+<td align="left"></td>
+<td align="left">Body mass index (BMI) [Ratio]</td>
+<td align="right">39156-5</td>
+</tr>
+<tr class="odd">
+<td align="left"></td>
+<td align="left">Body mass index (BMI) [Ratio] Estimated</td>
+<td align="right">89270-3</td>
+</tr>
+<tr class="even">
+<td align="left">Height</td>
+<td align="left">Body height</td>
+<td align="right">8302-2</td>
+</tr>
+<tr class="odd">
+<td align="left">Weight</td>
+<td align="left">Body weight</td>
+<td align="right">29463-7</td>
+</tr>
+<tr class="even">
+<td align="left">Heart rate</td>
+<td align="left">Heart rate</td>
+<td align="right">8867-4</td>
+</tr>
+<tr class="odd">
+<td align="left">Systolic blood pressure</td>
+<td align="left">Systolic blood pressure</td>
+<td align="right">8480-6</td>
+</tr>
+<tr class="even">
+<td align="left">Diastolic blood pressure</td>
+<td align="left">Diastolic blood pressure</td>
+<td align="right">8462-4</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li>See details for loading echocardiogram data under <a href="heartshare-retrospective-cohort-details.html#echo">Echo measurement</a>.</li>
 </ul></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#OBSERVATION"><strong><span style="color: black;">OBSERVATION</span></strong></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DEATH"><strong><span style="color: black;">DEATH</span></strong></a></p></li>
@@ -206,11 +1288,18 @@ I50.89,  I50.9</code></pre>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#FACT_RELATIONSHIP"><span style="color: gray;">FACT_RELATIONSHIP</span></a></p></li>
 </ul>
 </div>
-<div id="health-system-data-tables" class="section level3 hasAnchor" number="2.2.2">
-<h3><span class="header-section-number">2.2.2</span> Health System Data Tables<a href="heartshare-retrospective-cohort-details.html#health-system-data-tables" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="location" class="section level3 hasAnchor" number="2.2.2">
+<h3><span class="header-section-number">2.2.2</span> Health System Data Tables<a href="heartshare-retrospective-cohort-details.html#location" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables">https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables</a></p>
 <ul>
-<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables"><span style="color: gray;">LOCATION</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#Health_System_Data_Tables"><strong><span style="color: black;">LOCATION</span></strong></a></p>
+<ul>
+<li>We’ll be collecting patient’s 5-digit address zip codes only. For this purpose, LOCATION table needs to be populated with all USA 5-digit zip codes. A file in CSV format will be distributed to sites for loading into the table. This will also allow us to explore relevance of socioeconomic status, since various SES indicators exist at zip code level.</li>
+</ul></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm60.html#LOCATION_HISTORY"><strong><span style="color: black;">LOCATION_HISTORY</span></strong></a></p>
+<ul>
+<li>OMOP CDM v.5.3.1 does not have a way to record patient’s historical addresses. That is why LOCATION_HISTORY table has been introduced in OMOP CDM v.6.0. If address history is available for the patients, please create and populate this table. OMOP CDM guideline is that current (most recent) patient address should be stored in PERSON table, in <em>location_id</em> field.</li>
+</ul></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CARE_SITE"><span style="color: gray;">CARE_SITE</span></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#PROVIDER"><span style="color: gray;">PROVIDER</span></a></p></li>
 </ul>
@@ -246,8 +1335,54 @@ I50.89,  I50.9</code></pre>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#CONCEPT_ANCESTOR"><strong><span style="color: black;">CONCEPT_ANCESTOR</span></strong></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#SOURCE_TO_CONCEPT_MAP"><span style="color: gray;">SOURCE_TO_CONCEPT_MAP</span></a></p></li>
 <li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#DRUG_STRENGTH"><span style="color: gray;">DRUG_STRENGTH</span></a></p></li>
-<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#COHORT_DEFINITION"><span style="color: gray;">COHORT_DEFINITION</span></a></p></li>
-<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#ATTRIBUTE_DEFINITION"><span style="color: gray;">ATTRIBUTE_DEFINITION</span></a></p></li>
+<li><p><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#COHORT_DEFINITION"><strong><span style="color: black;">COHORT_DEFINITION</span></strong></a></p>
+<ul>
+<li>As HeartShare study involves multiple cohorts, we will need to be able to keep track of cohorts and its subjects. COHORT_DEFINITION table will be used to define cohorts of interest. The table should be populated with records as shown in the table below.</li>
+</ul></li>
+</ul>
+<table>
+<colgroup>
+<col width="22%" />
+<col width="25%" />
+<col width="30%" />
+<col width="21%" />
+</colgroup>
+<thead>
+<tr class="header">
+<th align="left">cohort_definition_id</th>
+<th align="left">cohort_definition_name</th>
+<th align="left">definition_type_concept_id</th>
+<th align="left">subject_concept_id</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td align="left">1</td>
+<td align="left">HeartShare Retrospective</td>
+<td align="left">0</td>
+<td align="left">1147026</td>
+</tr>
+<tr class="even">
+<td align="left">2</td>
+<td align="left">HeartShare Registry</td>
+<td align="left">0</td>
+<td align="left">1147026</td>
+</tr>
+<tr class="odd">
+<td align="left">3</td>
+<td align="left">HeartShare Deep Phenotyping</td>
+<td align="left">0</td>
+<td align="left">1147026</td>
+</tr>
+</tbody>
+</table>
+<ul>
+<li><a href="https://ohdsi.github.io/CommonDataModel/cdm54.html#COHORT"><strong><span style="color: black;">COHORT</span></strong></a>
+<ul>
+<li>Participating sites will be responsible for assignment of patients into cohorts. For <em>subject_id</em> in COHORT table use <em>person_id</em> from PERSON table and for <em>cohort_definition_id</em> use appropriate <em>cohort_definition_id</em> from COHORT_DEFINITION table. For HeartShare Retrospective cohort, use <em>observation_period_start_date</em> and
+<em>observation_period_end_date</em> from OBSERVATION_PERIOD table as <em>cohort_start_date</em> and <em>cohort_end_date</em>. For other cohorts, use patient’s enrollment date as <em>cohort_start_date</em> and use <em>observation_period_end_date</em> for <em>cohort_end_date</em>. If patient withdraws from the study or completes the participation update <em>cohort_end_date</em> with the date of the event.</li>
+</ul></li>
+<li><a href="https://ohdsi.github.io/CommonDataModel/cdm53.html#ATTRIBUTE_DEFINITION"><span style="color: gray;">ATTRIBUTE_DEFINITION</span></a></li>
 </ul>
 </div>
 <div id="vocabularies-to-load" class="section level3 hasAnchor" number="2.2.6">
@@ -256,151 +1391,151 @@ I50.89,  I50.9</code></pre>
 Size of OMOP vocabularies is typically in the range of ~20GB. At a minimum, it is recommended to use the vocabularies below:</p>
 <table>
 <colgroup>
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
-<col width="25%" />
+<col width="10%" />
+<col width="10%" />
+<col width="61%" />
+<col width="16%" />
 </colgroup>
 <thead>
 <tr class="header">
-<th>ID (CDM V4.5)</th>
-<th>CODE (CDM V5)</th>
-<th>NAME</th>
-<th>LATEST UPDATE</th>
+<th align="right">ID (CDM V4.5)</th>
+<th align="left">CODE (CDM V5)</th>
+<th align="left">NAME</th>
+<th align="left">LATEST UPDATE</th>
 </tr>
 </thead>
 <tbody>
 <tr class="odd">
-<td>1</td>
-<td>SNOMED</td>
-<td>Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)</td>
-<td>27-Jan-22</td>
+<td align="right">1</td>
+<td align="left">SNOMED</td>
+<td align="left">Systematic Nomenclature of Medicine - Clinical Terms (IHTSDO)</td>
+<td align="left">27-Jan-22</td>
 </tr>
 <tr class="even">
-<td>2</td>
-<td>ICD9CM</td>
-<td>International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 1 and 2 (NCHS)</td>
-<td>30-Sep-14</td>
+<td align="right">2</td>
+<td align="left">ICD9CM</td>
+<td align="left">International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 1 and 2 (NCHS)</td>
+<td align="left">30-Sep-14</td>
 </tr>
 <tr class="odd">
-<td>3</td>
-<td>ICD9Proc</td>
-<td>International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 3 (NCHS)</td>
-<td>30-Sep-14</td>
+<td align="right">3</td>
+<td align="left">ICD9Proc</td>
+<td align="left">International Classification of Diseases, Ninth Revision, Clinical Modification, Volume 3 (NCHS)</td>
+<td align="left">30-Sep-14</td>
 </tr>
 <tr class="even">
-<td>4</td>
-<td>CPT4</td>
-<td>Current Procedural Terminology version 4 (AMA)</td>
-<td>30-Apr-23</td>
+<td align="right">4</td>
+<td align="left">CPT4</td>
+<td align="left">Current Procedural Terminology version 4 (AMA)</td>
+<td align="left">30-Apr-23</td>
 </tr>
 <tr class="odd">
-<td>5</td>
-<td>HCPCS</td>
-<td>Healthcare Common Procedure Coding System (CMS)</td>
-<td>30-Jun-23</td>
+<td align="right">5</td>
+<td align="left">HCPCS</td>
+<td align="left">Healthcare Common Procedure Coding System (CMS)</td>
+<td align="left">30-Jun-23</td>
 </tr>
 <tr class="even">
-<td>6</td>
-<td>LOINC</td>
-<td>Logical Observation Identifiers Names and Codes (Regenstrief Institute)</td>
-<td>14-Aug-23</td>
+<td align="right">6</td>
+<td align="left">LOINC</td>
+<td align="left">Logical Observation Identifiers Names and Codes (Regenstrief Institute)</td>
+<td align="left">14-Aug-23</td>
 </tr>
 <tr class="odd">
-<td>8</td>
-<td>RxNorm</td>
-<td>RxNorm (NLM)</td>
-<td>2-Jul-23</td>
+<td align="right">8</td>
+<td align="left">RxNorm</td>
+<td align="left">RxNorm (NLM)</td>
+<td align="left">2-Jul-23</td>
 </tr>
 <tr class="even">
-<td>9</td>
-<td>NDC</td>
-<td>National Drug Code (FDA and manufacturers)</td>
-<td>26-Aug-23</td>
+<td align="right">9</td>
+<td align="left">NDC</td>
+<td align="left">National Drug Code (FDA and manufacturers)</td>
+<td align="left">26-Aug-23</td>
 </tr>
 <tr class="odd">
-<td>12</td>
-<td>Gender</td>
-<td>OMOP Gender</td>
-<td></td>
+<td align="right">12</td>
+<td align="left">Gender</td>
+<td align="left">OMOP Gender</td>
+<td align="left"></td>
 </tr>
 <tr class="even">
-<td>13</td>
-<td>Race</td>
-<td>Race and Ethnicity Code Set (USBC)</td>
-<td></td>
+<td align="right">13</td>
+<td align="left">Race</td>
+<td align="left">Race and Ethnicity Code Set (USBC)</td>
+<td align="left"></td>
 </tr>
 <tr class="odd">
-<td>14</td>
-<td>CMS Place of Service</td>
-<td>Place of Service Codes for Professional Claims (CMS)</td>
-<td></td>
+<td align="right">14</td>
+<td align="left">CMS Place of Service</td>
+<td align="left">Place of Service Codes for Professional Claims (CMS)</td>
+<td align="left"></td>
 </tr>
 <tr class="even">
-<td>21</td>
-<td>ATC</td>
-<td>WHO Anatomic Therapeutic Chemical Classification</td>
-<td>6-Sep-21</td>
+<td align="right">21</td>
+<td align="left">ATC</td>
+<td align="left">WHO Anatomic Therapeutic Chemical Classification</td>
+<td align="left">6-Sep-21</td>
 </tr>
 <tr class="odd">
-<td>35</td>
-<td>ICD10PCS</td>
-<td>ICD-10 Procedure Coding System (CMS)</td>
-<td>30-Sep-20</td>
+<td align="right">35</td>
+<td align="left">ICD10PCS</td>
+<td align="left">ICD-10 Procedure Coding System (CMS)</td>
+<td align="left">30-Sep-20</td>
 </tr>
 <tr class="even">
-<td>40</td>
-<td>DRG</td>
-<td>Diagnosis-related group (CMS)</td>
-<td></td>
+<td align="right">40</td>
+<td align="left">DRG</td>
+<td align="left">Diagnosis-related group (CMS)</td>
+<td align="left"></td>
 </tr>
 <tr class="odd">
-<td>41</td>
-<td>MDC</td>
-<td>Major Diagnostic Categories (CMS)</td>
-<td></td>
+<td align="right">41</td>
+<td align="left">MDC</td>
+<td align="left">Major Diagnostic Categories (CMS)</td>
+<td align="left"></td>
 </tr>
 <tr class="even">
-<td>44</td>
-<td>Ethnicity</td>
-<td>OMOP Ethnicity</td>
-<td></td>
+<td align="right">44</td>
+<td align="left">Ethnicity</td>
+<td align="left">OMOP Ethnicity</td>
+<td align="left"></td>
 </tr>
 <tr class="odd">
-<td>70</td>
-<td>ICD10CM</td>
-<td>International Classification of Diseases, Tenth Revision, Clinical Modification (NCHS)</td>
-<td>30-Sep-22</td>
+<td align="right">70</td>
+<td align="left">ICD10CM</td>
+<td align="left">International Classification of Diseases, Tenth Revision, Clinical Modification (NCHS)</td>
+<td align="left">30-Sep-22</td>
 </tr>
 <tr class="even">
-<td>82</td>
-<td>RxNorm Extension</td>
-<td>OMOP RxNorm Extension</td>
-<td>23-Aug-23</td>
+<td align="right">82</td>
+<td align="left">RxNorm Extension</td>
+<td align="left">OMOP RxNorm Extension</td>
+<td align="left">23-Aug-23</td>
 </tr>
 <tr class="odd">
-<td>88</td>
-<td>CVX</td>
-<td>CDC Vaccine Administered CVX (NCIRD)</td>
-<td>17-Apr-23</td>
+<td align="right">88</td>
+<td align="left">CVX</td>
+<td align="left">CDC Vaccine Administered CVX (NCIRD)</td>
+<td align="left">17-Apr-23</td>
 </tr>
 <tr class="even">
-<td>115</td>
-<td>Provider</td>
-<td>OMOP Provider</td>
-<td></td>
+<td align="right">115</td>
+<td align="left">Provider</td>
+<td align="left">OMOP Provider</td>
+<td align="left"></td>
 </tr>
 <tr class="odd">
-<td>128</td>
-<td>OMOP Extension</td>
-<td>OMOP Extension (OHDSI)</td>
-<td>30-May-23</td>
+<td align="right">128</td>
+<td align="left">OMOP Extension</td>
+<td align="left">OMOP Extension (OHDSI)</td>
+<td align="left">30-May-23</td>
 </tr>
 </tbody>
 </table>
 </div>
-<div id="echo-measurement" class="section level3 hasAnchor" number="2.2.7">
-<h3><span class="header-section-number">2.2.7</span> Echo Measurement<a href="heartshare-retrospective-cohort-details.html#echo-measurement" class="anchor-section" aria-label="Anchor link to header"></a></h3>
+<div id="echo" class="section level3 hasAnchor" number="2.2.7">
+<h3><span class="header-section-number">2.2.7</span> Echo Measurement<a href="heartshare-retrospective-cohort-details.html#echo" class="anchor-section" aria-label="Anchor link to header"></a></h3>
 <p>Echo measurements should be loaded into the MEASUREMENT table. Most of the echo variables could be matched to appropriate LOINC code(s). For variables where suitable standard codes were not found, custom vocabulary and custom concept mappings were created for capturing those values.The echo measurements should be able to be linked to echos in the PROCEDURE_OCCURRENCE table. For left ventricular ejection fraction, we recommend mapping the value in the echo reported by the echocardiographer to the most appropriate LOINC code. If the method of measurement is unknown, then use LOINC Code 8806-2, Left ventricular Ejection fraction by 2D echo.</p>
 <p><a href="https://heartsharestudy.github.io/PHENOTYPES/Echo%20Variables%20Mapping.html">Echo Variables Mappings</a></p>
 <p><a href="https://heartsharestudy.github.io/PHENOTYPES/HeartShare%20Vocabulary.html">Echo Variables Custom Vocabulary</a></p>

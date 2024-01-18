@@ -17,9 +17,9 @@ icd-10-codes
 hf-patients-prospectively-enrolled-in-the-heartshare-study
 omop-tables-usage
 clinical-data-tables
-health-system-data-tables
+location
 health-economics-data-tables
 standardized-derived-elements
 vocabulary-tables
 vocabularies-to-load
-echo-measurement
+echo
