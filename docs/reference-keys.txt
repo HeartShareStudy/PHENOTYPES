@@ -9,7 +9,7 @@ how-will-ehr-data-be-extracted-and-prepared-for-analysis
 local-ehr-query-cohort-identification-and-domain-selection.
 extract-transform-load-harmonization-using-the-omop-cdm
 where-will-the-ehr-data-be-analyzed
-heartshare-retrospective-cohort-details
+heartshare-cohort-details
 cohort
 historical-hf-patients-at-cc
 selection-criteria
