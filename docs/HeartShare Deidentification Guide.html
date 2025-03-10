@@ -1,0 +1,276 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="Northwestern University; NU; Feinberg School of Medicine; FSM" />
+<meta name="keywords" content="Institute for Artificial Intelligence in Medicine; I.AIM" />
+<meta name="keywords" content="HeartShare" />
+<meta name="Author" content="William H Temps III" />
+<meta name="Creator" content="vi; Visual Studio Code" />
+
+<!-- .............................................................. -->
+<link rel="stylesheet" href="wht3.css" type="text/css" />
+<style>
+body {
+   margin: 2em 2em 2em 2em;
+   font-family: Verdana, Georgia, Arial, Helvetica, sans-serif;
+}
+@media print {
+   body { color: black; background-color: white; }
+}
+p.top {
+   margin-left: 1%;
+   margin-right: 1%
+}
+ul.list-nocircle { list-style-image: none; list-style-type: none; }
+ol.alpha { list-style-type: upper-latin }
+ol.lower-roman { list-style-type: lower-roman }
+table.border { border-width: 2px; border-style: solid; }
+table.collapse { border-collapse: collapse; }
+table.noborder { border-style: none; }
+table { border-style: solid; border-collapse: collapse; } /* Default table style */
+td { vertical-align: top; border-style: solid; border-width: 2px; padding: 4px; }
+td.center { text-align: center; }
+td.left { text-align: left; }
+td.noborder { border-style: none }
+td.right { text-align: right; }
+td.nobr { white-space:nowrap; }
+td.rtnobr { text-align: right; white-space: nowrap; }
+th { border-style: solid; border-width: 1px; }
+th.center { text-align: center; }
+th.centernobr { text-align: center; white-space: nowrap; }
+tr.center { text-align: center; }
+tr.left { text-align: left; }
+tr.right { text-align: right; }
+
+div.blockquote { margin-left: 2em; margin-right: 2em }
+blockquote pre { margin-left: 2em; margin-right: 2em }
+dt {
+   font-weight: bold;
+   margin-top: .8em
+}
+</style>
+
+<!-- ============================================================== -->
+
+<title>HeartShare: Deidentification Guide</title>
+</head>
+
+<!-- .............................................................. -->
+<body>
+<h1>HeartShare: Deidentification Guide</h1>
+<div>Version 1.0, updated 2025-03-10 (Monday, March 10, 2025)</div>
+
+<!-- ============================================================== -->
+<hr />
+<p>This is a guide to resources and general principles for data deidentification
+in the context of the HeartShare project. Nothing in this document should be considered legal advice.</p>
+
+<ul>
+<li><a href="#Introduction">Introduction</a></li>
+<li><a href="#Resources">Resources</a></li>
+<li><a href="#Background">Background</a></li>
+<li><a href="#Overview">Overview</a></li>
+<li><a href="#General_Guidance">General Guidance</a></li>
+<li><a href="#Limited_Data_Set">Limited Data Set</a></li>
+<li><a href="#Further_Notes">Further notes</a></li>
+<li><a href="#SPHI_Exclusions">Appendix A: SPHI exclusions</a></li>
+</ul>
+
+<h2 id="Introduction">Introduction</h2>
+<p>In an effort to make this document general and comprehensive,
+material has been included that could be considered excessively detailed.
+This information is provided for those who want deeper background or more details.</p>
+
+<h2 id="Resources">Resources</h2>
+   <ol>
+   <li>Federal law: the Health Insurance Portability and Accountability Act of 1996 (HIPAA)</li>
+   <li>"The HIPAA Privacy Rule establishes national standards to protect individuals' medical records
+and other individually identifiable health information (collectively defined as 'protected health information')" or PHI.</li>
+   <li>The HIPAA Privacy Rule defines PHI; defines how PHI can be used; and regulates research on human subjects.
+PHI includes MRNs, names, dates, locations, and others.
+      <div>"The Privacy Rule is located at 45 CFR Part 160 and Subparts A and E of Part 164."</div>
+      <div><a href="https://www.hhs.gov/hipaa/for-professionals/privacy/index.html">https://www.hhs.gov/hipaa/for-professionals/privacy/index.html</a></div></li>
+   <li>"Guidance Regarding Methods for De-identification of Protected Health Information in Accordance with
+      the Health Insurance Portability and Accountability Act (HIPAA) Privacy Rule"
+(<a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html">https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html</a>)</li>
+   <li>Limited Data Set: "How Can Covered Entities Use and Disclose Protected Health Information for Research
+      and Comply with the Privacy Rule?"
+      <div><a href="https://privacyruleandresearch.nih.gov/pr_08.asp">https://privacyruleandresearch.nih.gov/pr_08.asp</a></div>
+      <div>"A limited data set is described as health information that excludes certain, listed direct identifiers
+         (see below) but that may include city; state; ZIP Code; elements of date; and other numbers, characteristics,
+         or codes not listed as direct identifiers."</div></li>
+   <li>Limited Data Set FAQ
+      <div><a href="https://www.hhs.gov/hipaa/for-professionals/faq/limited-data-set/index.html"></a>https://www.hhs.gov/hipaa/for-professionals/faq/limited-data-set/index.html</div></li>
+   <li id="HIPAA_Journal">Limited Data Set (the HIPAA Journal)
+      <div><a href="https://www.hipaajournal.com/limited-data-set-under-hipaa/">https://www.hipaajournal.com/limited-data-set-under-hipaa/</a></div></li>
+   <li>Because the database is located in Illinois, we're also required to comply with Illinois
+      statutes regarding patient privacy, which define classes of "Special Protected Health Information" (SPHI).
+      SPHI includes: mental health records; HIV/AIDS testing information; and genetic counseling information;
+      but not genetic testing.
+      <div>There are example files under the SQL/Examples directory illustrating techniques to remove
+         sensitive drug names and lists of specific ICD-10 codes that should be excluded from data sets
+         to comply with deidentification rules.</div>
+      <ul>
+      <li>Illinois Mental Health and Developmental Disabilities Confidentiality Act, 740 ILCS 110/1 et seq.
+         (<a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2043">https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=2043</a>)</li>
+      <li>Illinois AIDS Confidentiality Act and related Regulations, 410 ILCS 305/1 et seq, and 77 IAC 697.10 et seq.
+         (<a href="https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=1550">https://www.ilga.gov/legislation/ilcs/ilcs3.asp?ActID=1550</a>)</li>
+      <li>Illinois Genetic Counselor Licensing Act, 225 ILCS 135/1 et seq.</li>
+      <li>Illinois Genetic Information Privacy Act, 410 ILCS 513/1 et seq.</li>
+      <li>Illinois Health Information Exchange and Technology Act 0f 2010</li>
+      </ul></li>
+   <li>"Protecting Personal Health Information in Research: Understanding the HIPAA Privacy Rule" (About 17,600 words)
+      <div><a href="https://privacyruleandresearch.nih.gov/pdf/HIPAA_Privacy_Rule_Booklet.pdf">https://privacyruleandresearch.nih.gov/pdf/HIPAA_Privacy_Rule_Booklet.pdf</a>)</div></li>
+   </ol>
+
+<h2 id="Background">Background</h2>
+   <ol>
+   <li>Text of Health Insurance Portability and Accountability Act of 1996:
+      <div><a href="https://www.congress.gov/bill/104th-congress/house-bill/3103/text">https://www.congress.gov/bill/104th-congress/house-bill/3103/text</a></div></li>
+   <li>Summary of the HIPAA Privacy Rule
+      <div><a href="https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html">https://www.hhs.gov/hipaa/for-professionals/privacy/laws-regulations/index.html</a></div>
+      <ul>
+      <li>"<strong>De-Identified Health Information</strong>. There are no restrictions on the use or disclosure of
+         de-identified health information. De-identified health information neither identifies nor provides
+         a reasonable basis to identify an individual. There are two ways to de-identify information;
+         either: (1) a formal determination by a qualified statistician; or (2) the removal of
+         specified identifiers of the individual and of the individual's relatives, household members,
+         and employers is required, and is adequate only if the covered entity has no actual knowledge
+         that the remaining information could be used to identify the individual."</li>
+      <li>"<strong>Permitted Uses and Disclosures</strong>. A covered entity is permitted, but not required,
+         to use and disclose protected health information, without an individual's authorization,
+         for the following purposes or situations: (1) To the Individual (unless required for access or
+         accounting of disclosures); ... and (6) Limited Data Set for the purposes of research,
+         public health or health care operations."</li>
+      <li>"<strong>(6) Limited Data Set</strong>. A limited data set is protected health information
+         from which certain specified direct identifiers of individuals and their relatives,
+         household members, and employers have been removed.43 A limited data set may be used and
+         disclosed for research, health care operations, and public health purposes, provided the
+         recipient enters into a data use agreement promising specified safeguards for the
+         protected health information within the limited data set."</li>
+      <li>Note 43: Definition of Limited Data Set: "A limited data set is protected health information
+         that excludes the following direct identifiers of the individual or of relatives, employers,
+         or household members of the individual: (i) Names; (ii) Postal address information,
+         other than town or city, State and zip code; (iii) Telephone numbers; (iv) Fax numbers;
+         (v) Electronic mail addresses: (vi) Social security numbers; (vii) Medical record numbers;
+         (viii) Health plan beneficiary numbers; (ix) Account numbers; (x) Certificate/license numbers;
+         (xi) Vehicle identifiers and serial numbers, including license plate numbers;
+         (xii) Device identifiers and serial numbers; (xiii) Web Universal Resource Locators (URLs);
+         (xiv) Internet Protocol (IP) address numbers; (xv) Biometric identifiers,
+         including finger and voice prints; (xvi) Full face photographic images and any comparable images."</li>
+      </ul></li>
+   <li>HIPAA Final Rule (January 25, 2013): Modifications to the HIPAA Privacy, Security, Enforcement,
+      and Breach Notification Rules Under the Health Information Technology for Economic and
+      Clinical Health Act and the Genetic Information Nondiscrimination Act; Other Modifications
+      to the HIPAA Rules
+      <div><a href="https://www.govinfo.gov/content/pkg/FR-2013-01-25/pdf/2013-01073.pdf">https://www.govinfo.gov/content/pkg/FR-2013-01-25/pdf/2013-01073.pdf</a></div></li>
+   <li>HHS: Additional guidance on research:
+      <div><a href="https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/research/index.html">https://www.hhs.gov/hipaa/for-professionals/privacy/guidance/research/index.html</a></div></li>
+   <li>42 US Code 1320d-6 – Penalties for Wrongful disclosure of individually identifiable health information:
+      "A person who knowingly and in violation of this part ...."
+      <div><a href="https://www.govinfo.gov/app/details/USCODE-2010-title42/USCODE-2010-title42-chap7-subchapXI-partC-sec1320d-6">ttps://www.govinfo.gov/app/details/USCODE-2010-title42/USCODE-2010-title42-chap7-subchapXI-partC-sec1320d-6</a></div></li>
+   </ol>
+ 
+
+<h2 id="Overview">Overview</h2>
+<p>
+The HHS-HIPAA Guidance lists two methods of deidentification: "Expert Determination" and "Safe Harbor".
+Expert Determination requires a statistical review of deidentification methods to show that the
+risk of identifying an individual is "is very small".
+It doesn't specify any particular threshold or definition of "very small".
+Compliance is sufficiently difficult that the Expert Determination method is rarely used in practice.</p>
+<p>
+The Safe Harbor method is much more commonly used and generally known.</p>
+
+<h2 id="General_Guidance">General Guidance</h2>
+   <ul>
+   <li>Guidance on Satisfying the Safe Harbor Method:
+      <a href="https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html#safeharborguidance">https://www.hhs.gov/hipaa/for-professionals/special-topics/de-identification/index.html#safeharborguidance</a></li>
+   <li>Deidentifying data using the Safe Harbor method requires removing
+      "The following identifiers of the individual or of relatives, employers, or household members of the individual".
+      (Exceptions for Limited Data Sets are noted for each item.)
+      <ol class="upper-alpha">
+      <li>Names</li>
+      <li>All geographic subdivisions smaller than a state (first three digits of ZIP code may be used if it includes
+         more than 20,000 people, as derived from the most recent census)
+         <div>(ZIP code is allowed in a Limited Data Set)</div></li>
+      <li id="Item_C">All elements of dates (except year) ... all ages over 89 and all elements of dates
+         (including year) indicative of such age, except that such ages and elements may be
+         aggregated into a single category of age 90 or older
+         <div>For the HeartShare data set, the HIPAA advice is modified: For example,
+            if the patient's year of birth is 1910 and the year of healthcare service
+            is reported as 2010, then in the HeartShare data set
+            the year of birth should be reported as either 1900 or NULL.</div>
+         <div>(See "<a href="#Limited_Data_Set">Limited Data Set</a>", below.)</div></li>
+      <li>Telephone numbers</li>
+      <li>Fax numbers</li>
+      <li>Device identifiers and serial numbers</li>
+      <li>Email addresses</li>
+      <li>Web URLs (specific to an individual)</li>
+      <li>Social Security numbers</li>
+      <li>IP addresses (associated with an individual)</li>
+      <li>Medical record numbers</li>
+      <li>Vehicle identifier</li>
+      <li>Health plan beneficiary numbers</li>
+      <li>Account numbers</li>
+      <li>Certificate/license numbers</li>
+      <li>Any other unique identifying number, characteristic, or code (Not required for a <a href="#Limited_Data_Set">Limited Data Set</a>)</li>
+      </ol></li>
+   </ul>
+
+
+<h2 id="Limited_Data_Set">Limited Data Set</h2>
+<p>
+The intent for this project is for the contributing sites to share Limited Data Sets (LDS),
+which will contain information still classified as identifiable protected information.
+LDS must not be shared except as permitted by a Data Use Agreement.</p>
+<p>
+"The list of identifiers in a limited data set can include the town, city, or state of the individual,
+their gender, and dates relating to the individual." (See <a href="#HIPAA_Journal">HIPAA Journal</a>, above.)</p>
+<p>
+For HeartShare data sets, full dates (month, day, and year) may be used for all events EXCEPT birth date,
+which will be limited to the year of birth only.
+Any birth dates indicating an age of 90 or older (as of the date of service) must be replaced by the year "1900" or a NULL value.</p>
+
+<h2 id="Further_Notes">Further notes</h2>
+   <ul>
+   <li>"Identifying Code: A code corresponds to a value that is derived from a non-secure encoding mechanism.
+      For instance, a code derived from a secure hash function without a secret key (e.g., 'salt') would be
+      considered an identifying element."</li>
+   <li>"Identifying Characteristic: A characteristic may be anything that distinguishes an individual and
+      allows for identification. For example, a unique identifying characteristic could be the occupation
+      of a patient, if it was listed in a record as "current President of State University."</li>
+   <li><strong>Special handling of age and birth date:</strong>
+      <ul>
+      <li>Any <strong>ages 90 or older should be recorded as 90</strong> (see <a href="#Item_C">item C</a> above).</li>
+      <li>Although the rules for a limited data set allow retaining complete dates,
+         to help ensure patient privacy, <strong>please limit birth dates to the year of birth</strong> only.</li>
+      <li>Further, if the date when patient data is extracted, or any of the structured data items containing dates
+         (such as encounter date), is more than 90 years after the patient's date of birth
+         (indicating age over 90, including fractions),
+         <strong>the date of birth should be recorded as either 1900 or NULL</strong>.
+         (Both of these are already present in our data.)</li>
+      <li>Date of birth should be expressed as either an integer data type or a character string,
+         so that it can be limited to year only.
+         If it's necessary to use a date or date-time data type which requires month and day, use January 1.</li>
+      </ul></li>
+   <li>We have found instances in which the result of a procedure or a lab test contains PHI,
+      such as a date (for example, "20220103") or even a patient name ("Homer Simpson's knee surgery completed").
+      In addition to being on the look-out for these cases, generally make sure that values that should be
+      numeric really are numeric, are in the expected range, and don't conform to known patterns.
+      <div>String values should be safe as long as they conform to OMOP vocabularies.</div></li>
+   </ul>
+
+<h2 id="SPHI_Exclusions">Appendix A: SPHI exclusions</h2>
+<p>
+We've created some example SQL files demonstrating some ways to remove data restricted under Illinois law.
+These are posted in the HeartShare GitHub repository under
+<a href="https://github.com/HeartShareStudy/PHENOTYPES/SQL/Examples">PHENOTYPES/SQL/Examples</a>.</p>
+   <ul>
+   <li>Example SQL to exclude selected diagnosis codes: See file "HeartShare Example Exclude Diagnoses.sql"</li>
+   <li>Example SQL to exclude selected medications: See file "HeartShare Example Exclude Medications.sql"</li>
+   </ul>
+
+</body>
+</html>

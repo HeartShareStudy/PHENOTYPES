@@ -62,8 +62,48 @@ dt {
 
 <!-- ============================================================== -->
 <hr />
+   <ul>
+   <li><a href="#Start">Start</a></li>
+   <li><a href="#Preparation">Preparation for sending files</a></li>
+   <li><a href="#Security_Information">Security information</a></li>
+   <li><a href="#Linux.Command_line">Operating system: Linux or Unix; client: command line</a>
+      <ul>
+      <li><a href="#Linux.Command_Line.Preparation">Preparation</a></li>
+      <li><a href="#Linux.Command_Line.Sending.sftp">Sending files using sftp</a></li>
+      <li><a href="#Linux.Command_Line.Sending.scp">Sending files using the scp command</a></li>
+      <li><a href="#Linux.Command_Line.Problems">Problems and solutions</a></li>
+      </ul></li>
+   <li><a href="#Linux.Command_Line.Sending.GNOME_GUI">Operating system: Linux; client: GNOME Desktop GUI</a>
+      <ul>
+      <li><a href="#Linux.Command_Line.Sending.GNOME_GUI.Preparation">Preparation</a></li>
+      <li><a href="#Linux.Command_Line.Sending.GNOME_GUI.Sending">Sending files</a></li>
+      </ul></li>
+   <li><a href="#Windows.Command_Prompt.Sending">Operating system: Windows; client: Command Prompt</a>
+      <ul>
+      <li><a href="#Windows.Command_Prompt.Sending.References">References</a></li>
+      <li><a href="#Windows.Command_Prompt.Sending.Preparation">Preparation</a></li>
+      <li><a href="#Windows.Command_Prompt.Sending.Sending_Files">Sending files</a></li>
+      <li><a href="#Windows.Command_Prompt.Sending.sftp">Sending files using the sftp command</a></li>
+      <li><a href="#Windows.Command_Prompt.Sending.scp">Sending files using the scp command</a></li>
+      </ul></li>
+   <li><a href="#Windows.Power_Shell">Operating system: Windows; client: Power Shell</a>
+      <ul>
+      <li><a href="#Windows.Power_Shell.References">References</a></li>
+      <li><a href="#Windows.Power_Shell.Preparation">Preparation</a></li>
+      <li><a href="#Windows.Power_Shell.Sending">Sending files</a></li>
+      <li><a href="#Windows.Power_Shell.Sending.sftp">Sending files using Power Shell and the sftp command</a></li>
+      <li><a href="#Windows.Power_Shell.Sending.scp">Sending files using Power Shell and the scp command</a></li>
+      </ul></li>
+   <li><a href="#Windows.WinSCP">Operating system: Windows; client: WinSCP</a>
+      <ul>
+      <li><a href="#Windows.WinSCP.References">References</a></li>
+      <li><a href="#Windows.WinSCP.Preparation">Preparation</a></li>
+      <li><a href="#Windows.WinSCP.Sending">Sending files</a></li>
+      </ul></li>
+   </ul>
 
-<h2>Start</h2>
+<hr />
+<h2 id="Start">Start</h2>
     <ul>
     <li>Files can be exported from the SQL database (e.g., using the bcp “bulk copy” utility)
         <ul>
@@ -71,7 +111,7 @@ dt {
         </ul></li>
     </ul>
 
-<h2>Preparation for sending files</h2>
+<h2 id="Preparation">Preparation for sending files</h2>
     <ul>
     <li>The file transfer method recommended by the NU IT department is Secure FTP (sftp)</li>
     <li>The sending site must allow outbound TCP connections to the site transfer-gw.northwestern.edu on port 22.</li>
@@ -391,3 +431,5 @@ PS C:\Users\$local_username&gt;
         Otherwise, the HeartShare host will disconnect fairly soon if left inactive.
         <div><img src="images/WinSCP%20Disconnect%201.PNG" alt="WinSCP Disconnect"></div></li>
     </ul>
+</body>
+</html>
