@@ -1,0 +1,393 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta http-equiv="Content-Type" content="text/html; charset=UTF-8" />
+<meta name="keywords" content="Northwestern University; NU; Feinberg School of Medicine; FSM" />
+<meta name="keywords" content="Institute for Artificial Intelligence in Medicine; I.AIM" />
+<meta name="Author" content="William H Temps III" />
+<meta name="Creator" content="vi; Visual Studio Code" />
+
+<!-- .............................................................. -->
+<link rel="stylesheet" href="wht3.css" type="text/css" />
+<style>
+body {
+   margin: 2em 2em 2em 2em;
+   font-family: Verdana, Georgia, Arial, Helvetica, sans-serif;
+}
+@media print {
+   body { color: black; background-color: white; }
+}
+p.top {
+   margin-left: 1%;
+   margin-right: 1%
+}
+ul.list-nocircle { list-style-image: none; list-style-type: none; }
+ol.alpha { list-style-type: lower-latin }
+ol.lower-roman { list-style-type: lower-roman }
+table.border { border-width: 2px; border-style: solid; }
+table.collapse { border-collapse: collapse; }
+table.noborder { border-style: none; }
+table { border-style: solid; border-collapse: collapse; } /* Default table style */
+td { vertical-align: top; border-style: solid; border-width: 2px; padding: 4px; }
+td.center { text-align: center; }
+td.left { text-align: left; }
+td.noborder { border-style: none }
+td.right { text-align: right; }
+td.nobr { white-space:nowrap; }
+td.rtnobr { text-align: right; white-space: nowrap; }
+th { border-style: solid; border-width: 1px; }
+th.center { text-align: center; }
+th.centernobr { text-align: center; white-space: nowrap; }
+tr.center { text-align: center; }
+tr.left { text-align: left; }
+tr.right { text-align: right; }
+
+div.blockquote { margin-left: 2em; margin-right: 2em }
+blockquote pre { margin-left: 2em; margin-right: 2em }
+dt {
+   font-weight: bold;
+   margin-top: .8em
+}
+</style>
+
+<!-- ============================================================== -->
+
+<title>HeartShare: Guide to uploading data files</title>
+</head>
+
+<!-- .............................................................. -->
+<body>
+<h1>HeartShare: Guide to uploading data files</h1>
+<div>Version 1.1, updated 2025-03-09 (Sunday, March 9, 2025)</div>
+
+<!-- ============================================================== -->
+<hr />
+
+<h2>Start</h2>
+    <ul>
+    <li>Files can be exported from the SQL database (e.g., using the bcp “bulk copy” utility)
+        <ul>
+        <li>bcp can produce both format files describing tables (XML) and data files containing the table data</li>
+        </ul></li>
+    </ul>
+
+<h2>Preparation for sending files</h2>
+    <ul>
+    <li>The file transfer method recommended by the NU IT department is Secure FTP (sftp)</li>
+    <li>The sending site must allow outbound TCP connections to the site transfer-gw.northwestern.edu on port 22.</li>
+    <li>The NU IT department requires the following information to set up file transfer:
+        <ul>
+        <li>Name of outside collaborator(s) (person or persons sending files)</li>
+        <li>Email address of outside collaborator(s)</li>
+        <li>Phone number of outside collaborator(s)</li>
+        <li>Employer (sending site) name</li>
+        <li>IP address of computer sending files: XXX.XXX.XXX.XXX
+            <ul>
+            <li>Please note - The computer IP address needs to be a 'public-facing' IP address.  It can't be any address starting with 169., 172., or 10.  IT staff at the sending site can provide the IP info.  NUIT will accept a single IP address or a DHCP Address range.  They will only allow an address range up to a 0/24 network. The sending site can share the above info with their IT staff, or the IT staff can contact Scott Jeffries (s-jeff@northwestern.edu) if they have any questions.</li>
+            </ul></li>
+        <li>The only thing the outside collaborators will need to know is the SFTP server address, account name, and password.  The SFTP server, based on the account, will store the data in a folder associated with that account on the NU secure file server.</li>
+        <li>An SFTP client will be needed. Both Windows (10 and 11) and most Linux distributions include built-in command-line versions of sftp. GUI file-transfer programs supporting sftp are also available for Windows.</li>
+        </ul></li>
+    </ul>
+
+<h2 id="Security_Information">Security information</h2>
+    <ul>
+    <li>Host name: transfer-gw.northwestern.edu</li>
+    <li>Port: 22</li>
+    <li>Host IP address: 129.105.252.109</li>
+    <li>RSA key fingerprint: SHA256:djtXVeyL5GQ76t4n4/P97tjLUfv6xTEiBz2sm16ZHig</li>
+    </ul>
+
+<h2 id="Linux.Command_line">Operating system: Linux or Unix; client: command line</h2>
+<h3 id="Linux.Command_Line.Preparation">Preparation</h3>
+    <ul>
+    <li>The necessary client is generally present by default on these systems. The details of installing the software are beyond the scope of this document, but briefly:
+        <ul>
+        <li>Red Hat and Fedora: <code>/usr/bin/sudo /usr/bin/dnf install openssh</code>
+            <div>Reference: <a href="https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/infrastructure-services/OpenSSH/">https://docs.fedoraproject.org/en-US/fedora/latest/system-administrators-guide/infrastructure-services/OpenSSH/</a></div></li>
+        <li>Ubuntu: <code>/usr/bin/sudo /usr/bin/apt install openssh-client</code>
+            <div>Reference: <a href="https://documentation.ubuntu.com/server/how-to/security/openssh-server/">https://documentation.ubuntu.com/server/how-to/security/openssh-server/</a></div></li>
+        </ul></li>
+    <li>Before sending the first file, create an empty directory (folder); for example,
+        <div><code>mkdir .ssh_HeartShare</code></div>
+        <div>This can be used to avoid conflicts between the local ssh configuration and sftp.</div></li>
+    </ul>
+
+<h3 id="Linux.Command_Line.Sending.sftp">Sending files using sftp</h3>
+    <ul>
+    <li>Example: Sending files using the sftp command</li>
+    <li>$username and $password should be replaced by the user name and password assigned by Northwestern University IT</li>
+    <li>$filename is the file to be sent</li>
+    <li>"$" at the beginning of the line is the command prompt from the local system</li>
+    <li>"sftp>" is the prompt from the sftp command</li>
+    <li>The message "The authenticity of host" should happen only on the first file transfer with an empty .ssh_HeartShare directory. Answering "yes" will update the .ssh_HeratShare/known_hosts file. Make sure the host name and RSA key fingerprint match those in this document.
+<pre>
+$ sftp -o "User $username" -F ~/.ssh_HeartShare transfer-gw.northwestern.edu
+The authenticity of host 'transfer-gw.northwestern.edu (129.105.252.109)' can't be established.
+RSA key fingerprint is SHA256:djtXVeyL5GQ76t4n4/P97tjLUfv6xTEiBz2sm16ZHig.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'transfer-gw.northwestern.edu' (RSA) to the list of known hosts.
+Welcome! Please login.
+password
+Enter password for $username
+($username@transfer-gw.northwestern.edu) Password: $password
+Connected to transfer-gw.northwestern.edu.
+sftp&gt; cd /HeartShare_transfer
+sftp&gt; put $filename
+Uploading $filename to /HeartShare_transfer/$filename
+$filename                                                                             100%   19     0.5KB/s   00:00 
+sftp&gt; quit
+</pre></li>
+    </ul>
+
+
+<h3 id="Linux.Command_Line.Sending.scp">Sending files using the scp command</h3>
+<div>Note: The scp command uses the sftp protocol.</div>
+    <ul>
+    <li>Log in to the userid used to send files and run the scp command:
+<pre>
+$ scp -o "User $username" -F ~/.ssh_HeartShare $filename transfer-gw.northwestern.edu:/HeartShare_transfer
+Welcome! Please login.
+password
+Enter password for $username
+($username@transfer-gw.northwestern.edu) Password:
+$filename                                                                      100%   19     0.6KB/s   00:00
+</pre></li>
+    </ul>
+
+<h3 id="Linux.Command_Line.Problems">Problems and solutions</h3>
+    <ul>
+    <li>"Received disconnect from [address] port 22:11: Too many bad authentication attempts!"
+        <div>This indicates a conflict with the local ssh configuration.</div>
+        <ol>
+        <li>Solution 1: Create an empty folder like ~/.ssh_HeartShare and use the "-F" option</li>
+        <li>Temporarily rename the local userid's ssh directory ~/.ssh to some other name, send the file or files, and then rename ~/.ssh back.</li>
+        </ol></li>
+    </ul>
+
+<h2 id="Linux.Command_Line.Sending.GNOME_GUI">Operating system: Linux; client: GNOME Desktop GUI</h2>
+<h3 id="Linux.Command_Line.Sending.GNOME_GUI.Preparation">Preparation</h3>
+    <ul>
+    <li>GNOME is the default desktop for the Fedora and Ubuntu distributions of Linux</li>
+    <li>The necessary client is generally present by default on these systems. (See above.)</li>
+    </ul>
+
+<h3 id="Linux.Command_Line.Sending.GNOME_GUI.Sending">Sending files</h3>
+    <ul>
+    <li>$username is the name assigned by NU IT</li>
+    <li>Open the Files application</li>
+    <li>In the sidebar, open Network (in some versions, this is called "Other Locations")</li>
+    <li>Have the correct password ready</li>
+    <li>In the "Server address" box, enter sftp://$username@transfer-gw.northwestern.edu</li>
+    <li>Hit "Connect"
+        <div>NOTE: This will lock the desktop, dim the screen, and open a modal dialogue box to enter the password. Enter the password and "Unlock".</div></li>
+    <li>You should see the "HeartShare_transfer" folder, and the sidebar should show the user name assigned by NU IT</li>
+    <li>Open a second Files window (menu, "New Window"; or right-click on the Files icon and "New Window") and navigate to the file to be sent</li>
+    <li>Now you can drag the file to be sent into the "HeartShare_transfer" folder</li>
+    <li>Be sure to close the file transfer session by using the up-arrow next to the NU IT user name in the sidebar of the Files window (same as ejecting a removable drive)</li>
+    </ul>
+
+<h2 id="Windows.Command_Prompt.Sending">Operating system: Windows; client: Command Prompt</h2>
+<h3 id="Windows.Command_Prompt.Sending.References">References</h3>
+    <ul>
+    <li>“Tutorial: SSH in Windows Terminal”
+        (<a href="https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh">https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh</a>)</li>
+    </ul>
+
+<h3 id="Windows.Command_Prompt.Sending.Preparation">Preparation</h3>
+    <ul>
+    <li>The necessary client software is generally present by default on Windows 10 and Windows 11.</li>
+    <li>Requires user name (account) and password assigned by NU IT</li>
+    <li>For Windows, the path separator in the sftp or scp command can be either "/" (forward slash) or "\" (back-slash)</li>
+    </ul>
+
+<h3 id="Windows.Command_Prompt.Sending.Sending_Files">Sending files</h3>
+    <ul>
+    <li>The first time a user connects, they'll get this message:
+<pre>
+The authenticity of host 'transfer-gw.northwestern.edu (129.105.252.109)' can't be established.
+RSA key fingerprint is SHA256:djtXVeyL5GQ76t4n4/P97tjLUfv6xTEiBz2sm16ZHig.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+For security, check that the host name (transfer-gw.northwestern.edu) or IP address and the key fingerprint match this document. If they match, it should be safe to answer “yes”. This will add the HeartShare host and its public key to the local user’s “.ssh\known_hosts” file.
+</pre></li>
+    </ul>
+
+<h3 id="Windows.Command_Prompt.Sending.sftp">Sending files using the sftp command</h3>
+    <ul>
+    <li>Log in to the userid used to send files</li>
+    <li>%HEARTSHARE_NAME% and %PASSWORD% should be replaced by the user name and password assigned by Northwestern University IT</li>
+    <li>"C:\Users\%LOCAL_USERNAME%&gt;" represents the system command prompt</li>
+    <li>To send file “data_file.csv”:
+<pre>
+C:\Users\%LOCAL_USERNAME%>sftp -o "User %HEARTSHARE_NAME%" transfer-gw.northwestern.edu
+The authenticity of host 'transfer-gw.northwestern.edu (129.105.252.109)' can't be established.
+RSA key fingerprint is SHA256:djtXVeyL5GQ76t4n4/P97tjLUfv6xTEiBz2sm16ZHig.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'transfer-gw.northwestern.edu' (RSA) to the list of known hosts.
+Welcome! Please login.
+password
+Enter password for %HEARTSHARE_NAME%
+(%HEARTSHARE_NAME%@transfer-gw.northwestern.edu) Password: %PASSWORD%
+Connected to transfer-gw.northwestern.edu.
+sftp&gt; cd /HeartShare_transfer
+sftp&gt; put data_file.csv
+Uploading data_file.csv to /HeartShare_transfer/data_file.csv
+data_file.csv                                 100%   28     0.6KB/s   00:00
+sftp&gt; quit
+C:\Users\%LOCAL_USERNAME%&gt;
+</pre></li>
+</ul>
+
+<h3 id="Windows.Command_Prompt.Sending.scp">Sending files using the scp command</h3>
+<div>Note: The scp command and the sftp command both use the same secure protocol.</div>
+    <ul>
+    <li>Log in to the userid used to send files</li>
+    <li>To send file “data_file.csv" to “transfer-gw.northwestern.edu”:</li>
+    <li>Open a Command Prompt window
+<pre>
+Microsoft Windows [Version 10.0.19045.5247]
+(c) Microsoft Corporation. All rights reserved.
+ 
+C:\Users\%LOCAL_USERNAME%&gt;scp -p -o "User %HEARTSHARE_USER" data_file.csv transfer-gw.northwestern.edu:/HeartShare_transfer
+The authenticity of host 'transfer-gw.northwestern.edu (129.105.252.109)' can't be established.
+RSA key fingerprint is SHA256:djtXVeyL5GQ76t4n4/P97tjLUfv6xTEiBz2sm16ZHig.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])? yes
+Warning: Permanently added 'transfer-gw.northwestern.edu' (RSA) to the list of known hosts.
+Welcome! Please login.
+password
+Enter password for %HEARTSHARE_USER%
+(%HEARTSHARE_USER%@transfer-gw.northwestern.edu) Password: %PASSWORD%
+data_file.csv                     100%   28     0.8KB/s   00:00
+ 
+C:\Users\%LOCAL_USERNAME%&gt;
+</pre></li>
+    </ul>
+
+
+<h2 id="Windows.Power_Shell">Operating system: Windows; client: Power Shell</h2>
+<h3 id="Windows.Power_Shell.References">References</h3>
+    <ul>
+    <li>“Tutorial: SSH in Windows Terminal”
+(<a href="https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh">https://learn.microsoft.com/en-us/windows/terminal/tutorials/ssh</a>)</li>
+    </ul>
+
+<h3 id="Windows.Power_Shell.Preparation">Preparation</h3>
+    <ul>
+    <li>The necessary client software is generally present by default on Windows 10 and Windows 11.</li>
+    <li>Requires user name (account) and password assigned by NU IT</li>
+    <li>For Windows, the path separator in the sftp or scp command can be either "/" (forward slash) or "\" (back-slash)</li>
+    </ul>
+
+<h3 id="Windows.Power_Shell.Sending">Sending files</h3>
+    <ul>
+    <li>The first time a user connects, they'll get this message:
+<pre>
+The authenticity of host 'transfer-gw.northwestern.edu (129.105.252.109)' can't be established.
+RSA key fingerprint is SHA256:djtXVeyL5GQ76t4n4/P97tjLUfv6xTEiBz2sm16ZHig.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+</pre>
+<div>For security, check that the host name (transfer-gw.northwestern.edu) or IP address and the key fingerprint match this document. If they match, it should be safe to answer “yes”. This will add the HeartShare host and its public key to the local user's “.ssh\known_hosts” file.</div></li>
+    </ul>
+
+<h3 id="Windows.Power_Shell.Sending.sftp">Sending files using Power Shell and the sftp command</h3>
+    <ul>
+    <li>Log in to the userid used to send files</li>
+    <li>$username and $password should be replaced by the user name and password assigned by Northwestern University IT</li>
+    <li>"PS C:\Users\$local_username&gt;" Represents the Power Shell prompt</li>
+    <li>To send file “data_file.csv”:</li>
+    <li>Open a Power Shell window
+<pre>
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+ 
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+ 
+PS C:\Users\$local_username&gt; sftp -o "User $username" transfer-gw.northwestern.edu
+The authenticity of host 'transfer-gw.northwestern.edu (129.105.252.109)' can't be established.
+RSA key fingerprint is SHA256:djtXVeyL5GQ76t4n4/P97tjLUfv6xTEiBz2sm16ZHig.
+This key is not known by any other names.
+Are you sure you want to continue connecting (yes/no/[fingerprint])?
+Please type 'yes', 'no' or the fingerprint: yes
+Warning: Permanently added 'transfer-gw.northwestern.edu' (RSA) to the list of known hosts.
+Welcome! Please login.
+password
+Enter password for $username
+($username@transfer-gw.northwestern.edu) Password: $password
+Connected to transfer-gw.northwestern.edu.
+sftp> cd /HeartShare_transfer
+sftp> put data_file.csv
+Uploading data_file.csv to /HeartShare_transfer/data_file.csv
+data_file.csv                                                         100%  124     2.6KB/s   00:00
+sftp&gt; quit
+PS C:\Users\$local_username&gt;
+</pre></li>
+    </ul>
+
+<h3 id="Windows.Power_Shell.Sending.scp">Sending files using Power Shell and the scp command</h3>
+    <ul>
+    <li>Sending files using the scp command</li>
+    <li>Log in to the userid used to send files</li>
+    <li>To send file “data_file.csv” to “transfer-gw.northwestern.edu”:</li>
+    <li>Open PowerShell window
+<pre>
+Windows PowerShell
+Copyright (C) Microsoft Corporation. All rights reserved.
+
+Try the new cross-platform PowerShell https://aka.ms/pscore6
+
+
+PS C:\Users\$local_username&gt; scp -p -o "User $username" data_file.csv transfer-gw.northwestern.edu:/HeartShare_transfer
+Welcome! Please login.
+password
+Enter password for $username
+($username@transfer-gw.northwestern.edu) Password: $password
+data_file.txt                                   100%   28     0.2KB/s   00:00
+PS C:\Users\$local_username&gt;
+</pre></li>
+    </ul>
+
+
+<h2 id="Windows.WinSCP">Operating system: Windows; client: WinSCP</h2>
+<div>WinSCP is free, open-source software. Use at your own risk; Northwestern University doesn't endorse or warranty this software.</div>
+<h3 id="Windows.WinSCP.References">References</h3>
+    <ul>
+    <li>WinSCP Web site <a href="https://winscp.net/eng/index.php">https://winscp.net/eng/index.php</a></li>
+    <li>Licensing: "WinSCP is free software: you can use it, redistribute it and/or modify it
+        under the terms of the GNU General Public License (GPL) as published by the Free Software Foundation,
+        either version 3 of the License, or (at your option) any later version."</li>
+    </ul>
+
+<h3 id="Windows.WinSCP.Preparation">Preparation</h3>
+    <ul>
+    <li>Requires user name (account) and password assigned by NU IT</li>
+    <li>Install WinSCP from the above Web site. The installation process includes requests for donations, but these are optional. The WinSCP home page and download page also have a lot of advertising, including some misleading "Download" buttons for other products, so be careful to download WinSCP and not something else.</li>
+    <li>WinSCP can be installed in either the "Commander" mode or the "Explorer" mode.
+        <div>"Commander": One window showing local and remote files. This document assumes the "Commander" mode.</div>
+        <div>"Explorer": Separate windows for local and remote files</div></li>
+    </ul>
+
+<h3 id="Windows.WinSCP.Sending">Sending files</h3>
+    <ul>
+    <li>WinSCP Web site: Connect to FTP server or SFTP server :: WinSCP:</li>
+    <li>Start WinSCP
+        <div>The Login dialogue will appear</div>
+        <div>Fill in Host name, User name, and Password, then Login
+           <img src="images/WinSCP%20Login.PNG" alt="WinSCP Login window: Enter host name, user name, and password"></div></li>
+    <li>The first login will issue a warning message
+        <div>Check that the host name is "transfer-gw.northwestern.edu" and the rsa2 key fingerprint, then answer "Accept"
+        <img src="images/WinSCP%20Warning.PNG" alt="Warning: Host not recognized. Check host name and fingerprint."></div></li>
+    <li>After login, you should see the Transfer window
+        <img src="images/WinSCP%20Transfer.PNG" alt="WinSCP Transfer window"></li>
+    <li>In the Transfer window, you can either drag the file or files to be sent into the "HeartShare_transfer" folder, or open the "HeartShare_transfer" folder and then drag the file or files.
+        <img src="images/WinSCP%20Transfer%202.PNG" alt="Second transfer window"></li>
+    <li>Confirm that you want to continue the transfer:
+        <div><img src="images/WinSCP%20OK.PNG" alt="WinSCP OK"></div></li>
+    <li>When you're finished transferring files, there's a "Disconnect" option under the "Tabs" menu.
+        Otherwise, the HeartShare host will disconnect fairly soon if left inactive.
+        <div><img src="images/WinSCP%20Disconnect%201.PNG" alt="WinSCP Disconnect"></div></li>
+    </ul>
